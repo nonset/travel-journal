@@ -76,7 +76,7 @@ Overall Progress
 # 🟡 In Progress
 
 - [x] PROJECT_STATUS.md
-- [ ] PRD.md
+- [x] PRD.md
 - [ ] ROADMAP.md
 - [ ] DEVLOG.md
 - [ ] FEATURE_LIST.md
