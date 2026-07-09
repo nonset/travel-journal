@@ -40,6 +40,14 @@ Expenses are important.
 
 But stories are priceless.
 
+- Memory First
+- Simplicity Over Complexity
+- Offline First
+- Fast Recording
+- Beautiful User Experience
+- Share Worthy
+- Emotion Driven
+
 ---
 
 # 🎨 Design Principles
