@@ -30,19 +30,60 @@ Features are grouped by module to simplify development and maintenance.
 
 ---
 
-### ✈️ Trip Management
+### 💰 Expense Tracking
 
-Manage travel journeys from creation to completion.
+### Goal
+
+Allow travelers to record every expense in less than 5 seconds while preserving the story behind each purchase.
+
+Travel expenses should become part of the travel experience,
+not just numbers in a spreadsheet.
+
+---
 
 | Feature | Description | MVP | Priority | Screen | Status |
-|---------|-------------|:---:|:--------:|--------|--------|
-| Create Trip | Create a new travel journal | ✅ | 🔴 High | Create Trip | Planned |
-| Edit Trip | Edit trip information | ✅ | 🟡 Medium | Trip Settings | Planned |
-| Delete Trip | Delete a trip | ✅ | 🔴 High | Trip Settings | Planned |
-| Trip Cover | Select cover image | ✅ | 🔴 High | Create Trip | Planned |
-| Trip Story | Write the story of the trip | ✅ | 🟡 Medium | Trip Detail | Planned |
-| Trip Timeline | Display journey timeline | ✅ | 🔴 High | Timeline | Planned |
-| Trip Travelers | Add travel companions | ❌ | 🔵 Future | Trip Settings | Planned |
+|----------|-------------|:---:|:--------:|--------|--------|
+| Add Expense | Record a new expense | ✅ | 🔴 High | Add Expense | Planned |
+| Edit Expense | Edit expense information | ✅ | 🟡 Medium | Expense Detail | Planned |
+| Delete Expense | Delete an expense | ✅ | 🔴 High | Expense Detail | Planned |
+| Expense Category | Select expense category | ✅ | 🔴 High | Add Expense | Planned |
+| Payment Method | Cash / Credit Card / E-Wallet | ✅ | 🟡 Medium | Add Expense | Planned |
+| Currency | Select expense currency | ✅ | 🔴 High | Add Expense | Planned |
+| Expense Photos | Attach receipt or related photos | ✅ | 🟡 Medium | Expense Detail | Planned |
+| Expense Location | Save where the expense occurred | ✅ | 🟢 Low | Add Expense | Planned |
+| Expense Notes | Add optional notes | ✅ | 🟢 Low | Expense Detail | Planned |
+| Favorite Expense | Pin important expenses | ❌ | 🔵 Future | Expense Detail | Planned |
+
+---
+
+#### Business Rules
+
+- Amount must be greater than zero.
+- Category is required.
+- Currency is required.
+- Every expense belongs to one trip.
+- Expense date must be within trip dates.
+- Receipt photo is optional.
+- One expense can contain multiple photos.
+- Location is optional.
+- Notes are optional.
+- Expenses cannot exist without a trip.
+
+---
+
+#### Future Ideas
+
+- OCR receipt scanning
+- AI category suggestion
+- AI spending insights
+- Budget warning
+- Daily spending summary
+- Expense heat map
+- Monthly travel spending report
+- Split bill
+- Multi-currency wallet
+- Smart currency conversion
+- Automatic exchange rate history
 
 ---
 
@@ -50,11 +91,32 @@ Manage travel journeys from creation to completion.
 
 Record every travel expense quickly and beautifully.
 
+Every expense should become part of the travel story,
+not just numbers in a spreadsheet.
+
 ---
 
 ### 📷 Photo Memories
 
-Capture memorable moments connected with expenses.
+
+
+Goal
+
+↓
+
+Description
+
+↓
+
+Feature Table
+
+↓
+
+Business Rules
+
+↓
+
+Future Ideas
 
 ...
 
@@ -83,7 +145,7 @@ Capture memorable moments connected with expenses.
 
 ---
 
-## 🚀 Future Features
+## 🚀 Platform Features
 
 AI Planner
 
@@ -99,18 +161,5 @@ Smart Reminder
 
 ...
 
-### Business Rules
-- Trip Name is required.
-- Country is required.
-- Start Date must be before End Date.
-- One trip has one primary country.
-- One cover image per trip.
-- Trips cannot overlap in dates if marked as Active.
 
-#### Future Ideas
 
-- AI-generated trip story
-- AI-generated cover image
-- Duplicate previous trip
-- Import from Google Maps Timeline
-- Collaborative trips
