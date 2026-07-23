@@ -98,32 +98,109 @@ not just numbers in a spreadsheet.
 
 ### 📷 Photo Memories
 
+#### Goal
+
+Allow travelers to preserve every memorable moment of their journey.
+
+Photos should tell the story of the trip,
+not just fill the phone gallery.
 
 
-Goal
+#### Description
 
-↓
+Capture memorable travel moments through beautiful photos connected to trips, expenses, emotions, and daily notes.
 
-Description
+Every photo becomes a meaningful part of the travel story.
 
-↓
 
-Feature Table
+#### Feature Table
 
-↓
+| Feature | Description | MVP | Priority | Screen | Status |
+|----------|-------------|:---:|:--------:|--------|--------|
+| Add Photo | Add travel photos | ✅ | 🔴 High | Photo Gallery | Planned |
+| Delete Photo | Remove unwanted photos | ✅ | 🔴 High | Photo Detail | Planned |
+| Photo Caption | Add a caption | ✅ | 🟡 Medium | Photo Detail | Planned |
+| Photo Location | Save where the photo was taken | ✅ | 🟡 Medium | Photo Detail | Planned |
+| Link to Expense | Connect photo with an expense | ✅ | 🔴 High | Expense Detail | Planned |
+| Link to Daily Note | Connect photo with travel notes | ✅ | 🟡 Medium | Daily Notes | Planned |
+| Trip Cover | Select trip cover photo | ✅ | 🔴 High | Trip Settings | Planned |
+| Favorite Photo | Mark favorite memories | ❌ | 🟢 Low | Photo Detail | Planned |
+| Photo Timeline | Display photos in timeline | ✅ | 🔴 High | Timeline | Planned |
+| Full Screen Viewer | View photos in full screen | ✅ | 🟡 Medium | Photo Detail | Planned |
 
-Business Rules
+#### Business Rules
 
-↓
+- Every photo belongs to one trip.
+- One photo may be linked to one expense.
+- One photo may be linked to one daily note.
+- Caption is optional.
+- Location is optional.
+- One trip has only one cover photo.
+- Photos are deleted when the trip is deleted.
+- Supported formats: JPG, PNG, HEIC.
+- Photos are ordered by capture date by default.
 
-Future Ideas
+#### Future Ideas
 
-...
+- AI photo caption
+- AI landmark recognition
+- AI best moment selection
+- Memory slideshow
+- Photo map
+- Face grouping
+- Photo filters
+- Before / After comparison
+- Auto memory video
+- Share memory card
 
 
 ### 😊 Emoji Journal
 
-...
+#### Goal
+
+Help travelers capture how they felt during every moment of the trip.
+
+Emotions are often remembered longer than facts.
+
+#### Description
+
+Record emotions throughout the journey using simple emojis connected to photos, expenses, and daily notes.
+
+Every emotion adds another layer to the travel story.
+
+#### Feature Table
+
+| Feature | Description | MVP | Priority | Screen | Status |
+|----------|-------------|:---:|:--------:|--------|--------|
+| Select Emoji | Choose an emotion | ✅ | 🔴 High | Emotion Picker | Planned |
+| Emotion Note | Add a short description | ✅ | 🟡 Medium | Emotion Picker | Planned |
+| Link to Photo | Connect emotion with a photo | ✅ | 🔴 High | Photo Detail | Planned |
+| Link to Expense | Connect emotion with an expense | ✅ | 🟡 Medium | Expense Detail | Planned |
+| Link to Daily Note | Connect emotion with daily notes | ✅ | 🟡 Medium | Daily Notes | Planned |
+| Emotion Timeline | Display emotions in timeline | ✅ | 🔴 High | Timeline | Planned |
+| Favorite Emotion | Pin memorable emotions | ❌ | 🟢 Low | Emotion Detail | Planned |
+| Emotion Statistics | Show emotional summary | ❌ | 🔵 Future | Trip Summary | Planned |
+
+#### Business Rules
+
+- Every emotion belongs to one trip.
+- One emotion may be linked to one photo.
+- One emotion may be linked to one expense.
+- One emotion may be linked to one daily note.
+- Emoji selection is required.
+- Emotion note is optional.
+- Emotions are ordered by date and time.
+
+#### Future Ideas
+
+- AI emotion detection from photos
+- AI emotion timeline
+- Mood calendar
+- Mood heat map
+- Emotional journey summary
+- Emotion comparison between trips
+- Monthly mood report
+- AI travel personality
 
 ---
 
