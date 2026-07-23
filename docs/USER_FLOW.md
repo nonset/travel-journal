@@ -61,6 +61,10 @@ Complete Trip
 
 ↓
 
+Generate Summary ⭐
+
+↓
+
 Trip Summary
 
 ↓
@@ -566,6 +570,241 @@ or continues recording new ones.
 - Users can filter by memory type.
 - Users can search memories.
 - Timeline updates automatically after new records are added.
+
+### 🏁 Flow 9 : Complete Trip
+
+#### Goal
+
+Allow users to officially finish their journey while preserving every memory.
+
+#### UX Goal
+
+Completing a trip should feel satisfying,
+like closing the final page of a travel journal.
+
+#### Entry
+
+User taps "Complete Trip" from the Trip Dashboard or Trip Settings.
+
+#### Flow
+
+Trip Dashboard
+
+↓
+
+Open Trip Settings
+
+↓
+
+Tap "Complete Trip"
+
+↓
+
+Confirmation Dialog
+
+↓
+
+Confirm Completion
+
+↓
+
+Lock Trip Recording
+
+↓
+
+Generate Summary
+
+#### Exit
+
+Trip status changes to "Completed"
+and the summary generation begins.
+
+#### Notes
+
+- Users must confirm before completing a trip.
+- Completed trips become read-only by default.
+- Users can reopen the trip if necessary.
+- Completion date is automatically recorded.
+- Summary generation starts automatically.
+
+### ⭐ Flow 10 : Generate Summary
+
+#### Goal
+
+Transform travel records into a meaningful travel story.
+
+#### UX Goal
+
+Users should feel excited while waiting
+to rediscover their journey.
+
+#### Entry
+
+Trip is marked as completed.
+
+#### Flow
+
+Trip Completed
+
+↓
+
+Collect Trip Data
+
+↓
+
+Analyze Memories
+
+↓
+
+Generate Statistics
+
+↓
+
+Generate Highlights
+
+↓
+
+Generate Trip Summary
+
+↓
+
+Trip Summary Ready
+
+#### Exit
+
+The complete trip summary is available for viewing.
+
+#### Notes
+
+- Summary is generated automatically.
+- Users can regenerate the summary later.
+- Photos, expenses, emotions, and notes are included.
+- AI-generated content is optional.
+- Generation should finish in the background.
+
+### 📖 Flow 11 : Trip Summary
+
+#### Goal
+
+Present the entire journey as a beautiful collection of memories.
+
+#### UX Goal
+
+Viewing the trip summary should feel like opening a personalized travel book,
+bringing every unforgettable moment back to life.
+
+#### Entry
+
+Trip summary has been successfully generated.
+
+#### Flow
+
+Summary Ready
+
+↓
+
+Open Trip Summary
+
+↓
+
+View Travel Story
+
+↓
+
+Browse Highlights
+
+↓
+
+View Statistics
+
+↓
+
+Browse Favorite Memories
+
+↓
+
+Choose Next Action
+
+├── Share Memory
+
+├── Export Summary
+
+└── Return Home
+
+#### Exit
+
+User finishes reviewing the trip summary.
+
+#### Notes
+
+- Summary combines expenses, photos, emotions, and daily notes.
+- Statistics are generated automatically.
+- Highlights are displayed chronologically.
+- AI-generated story is optional.
+- Users can regenerate the summary anytime.
+
+### 📤 Flow 12 : Share Memory
+
+#### Goal
+
+Allow users to proudly share their travel memories with others.
+
+#### UX Goal
+
+Sharing memories should feel effortless,
+while preserving the beauty of the travel story.
+
+#### Entry
+
+User taps "Share" from the Trip Summary.
+
+#### Flow
+
+Trip Summary
+
+↓
+
+Tap Share
+
+↓
+
+Choose Share Format
+
+├── Memory Card
+
+├── Story Image
+
+├── PDF Summary
+
+├── Timeline Snapshot
+
+↓
+
+Generate Share Content
+
+↓
+
+System Share Sheet
+
+↓
+
+Select Destination
+
+↓
+
+Share Completed
+
+#### Exit
+
+Shared content is successfully sent
+or saved to the user's device.
+
+#### Notes
+
+- Multiple share formats are supported.
+- Shared images use the trip theme automatically.
+- Personal information can be hidden before sharing.
+- Share generation should be fast.
 
 
 
