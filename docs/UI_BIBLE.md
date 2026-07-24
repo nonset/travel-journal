@@ -79,45 +79,47 @@ Users should never worry about internet connectivity.
 
 ## 📏 Spacing System
 
-4
+| Token | Value | Usage |
+|--------|------:|------|
+| XS | 4 | Tiny gap |
+| SM | 8 | Small gap |
+| MD | 16 | Default spacing |
+| LG | 24 | Section gap |
+| XL | 32 | Large spacing |
+| XXL | 48 | Hero spacing |
 
-8
+---
 
-12
+## 🖼 Iconography
 
-16
+Material Symbols Rounded
 
-20
+24dp
 
-24
+Filled = Selected
 
-32
+Outlined = Normal
 
-40
+Avoid mixing icon packs.
 
-48
 
-Screen Padding
+---
 
-16
+## 📷 Image Guidelines
 
-Card Padding
+Trip Cover
 
-16
+16:9
 
-Section Gap
+Photo
 
-24
+3:4
 
-Button Height
+Avatar
 
-48
+1:1
 
-Border Radius
-
-8
-
-12
+Radius
 
 16
 
@@ -159,33 +161,13 @@ Loading
 
 Skeleton
 
+Detailed in next section
+
 ---
 
 ## 📱 Screen List
 
-Splash
 
-Welcome
-
-Home
-
-Create Trip
-
-Trip Dashboard
-
-Expense
-
-Photo Gallery
-
-Emotion
-
-Daily Notes
-
-Timeline
-
-Trip Summary
-
-Settings
 
 | Screen | MVP |
 |---------|-----|
@@ -208,6 +190,10 @@ Welcome
 
 Home
 
+├ Dashboard
+
+├ Settings
+
 ↓
 
 Trip Dashboard
@@ -228,31 +214,76 @@ Trip Dashboard
 
 ## 🎭 Empty States
 
-...
+No Trips
+
+No Expenses
+
+No Photos
+
+No Timeline
+
+No Summary
 
 ---
 
 ## ⚠️ Error States
 
-...
+Offline
+
+Sync Failed
+
+Permission Denied
+
+Camera Failed
+
+Storage Full
 
 ---
 
 ## 🌙 Theme Support
 
-...
+Dark Theme
+
+Light Theme
+
+Dynamic Color
+
+System Theme
 
 ---
 
+
 ## ♿ Accessibility
 
-...
+- Minimum tap target: 48dp
+
+- Support Dynamic Font Size
+
+- Color contrast follows WCAG AA
+
+- Screen Reader labels
+
+- Semantic widgets
+
+- Keyboard navigation (Desktop)
+
+- Focus indicator
+
+- High contrast mode support
 
 ---
 
 ## ✨ Motion & Animation
 
-...
+Page Transition
+
+Hero Animation
+
+Timeline Animation
+
+FAB Animation
+
+Loading
 
 ---
 
