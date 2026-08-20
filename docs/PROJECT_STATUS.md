@@ -124,6 +124,8 @@ Today Progress
 | Push SCR-003 Home | ✅ Completed | Pushed SCR-003 checkpoint to `origin/main` |
 | Implement SCR-004 Create Trip | ✅ Completed | Added required trip name/country fields, travel date selectors, optional cover placeholder, validation, and save feedback |
 | Verify SCR-004 Create Trip | ✅ Completed | `flutter analyze` and `flutter test` passed after Create Trip implementation |
+| Commit SCR-004 Create Trip | ✅ Completed | Commit `1b8f2dd Implement SCR-004 create trip screen` |
+| Push SCR-004 Create Trip | ✅ Completed | Pushed SCR-004 checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -146,8 +148,9 @@ Today Progress
 - [x] Commit SCR-003 Home implementation
 - [x] Push SCR-003 Home implementation to GitHub
 - [x] Start SCR-004 Create Trip implementation
-- [ ] Commit SCR-004 Create Trip implementation
-- [ ] Push SCR-004 Create Trip implementation to GitHub
+- [x] Commit SCR-004 Create Trip implementation
+- [x] Push SCR-004 Create Trip implementation to GitHub
+- [ ] Start SCR-005 Trip Dashboard implementation
 
 ---
 
@@ -258,10 +261,6 @@ None
 
 # 💡 Next Action
 
-Commit SCR-004 Create Trip Screen implementation.
-
-After that,
-
 Start SCR-005 Trip Dashboard.
 
 ---
@@ -308,11 +307,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-004 Create Trip checkpoint
+🟡 SCR-005 Trip Dashboard planning
 
 Next
 
-➡ Commit SCR-004 Create Trip implementation
+➡ Implement SCR-005 Trip Dashboard Screen
 
 
 ---
