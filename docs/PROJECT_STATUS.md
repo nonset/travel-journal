@@ -157,6 +157,8 @@ Today Progress
 | Commit saved trip dashboard reopen verification | ✅ Completed | Commit `405c12a Verify saved trip dashboard reopening` |
 | Push saved trip dashboard reopen verification | ✅ Completed | Pushed saved trip dashboard reopen checkpoint to `origin/main` |
 | Plan SCR-006 Expense foundation | ✅ Completed | Added Expense domain, repository, validation, UI-entry, and deferred-scope plan to `SERVICE_SPEC.md` |
+| Commit SCR-006 Expense foundation plan | ✅ Completed | Commit `bb2dfd4 Plan SCR-006 expense foundation` |
+| Push SCR-006 Expense foundation plan | ✅ Completed | Pushed SCR-006 Expense foundation plan to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -203,8 +205,9 @@ Today Progress
 - [x] Commit saved trip dashboard reopen verification
 - [x] Push saved trip dashboard reopen verification to GitHub
 - [x] Plan SCR-006 Expense foundation
-- [ ] Commit SCR-006 Expense foundation plan
-- [ ] Push SCR-006 Expense foundation plan to GitHub
+- [x] Commit SCR-006 Expense foundation plan
+- [x] Push SCR-006 Expense foundation plan to GitHub
+- [ ] Implement SCR-006 Expense domain foundation
 
 ---
 
@@ -315,10 +318,6 @@ None
 
 # 💡 Next Action
 
-Commit SCR-006 Expense foundation plan.
-
-After that,
-
 Implement SCR-006 Expense domain foundation.
 
 ---
@@ -365,11 +364,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Expense foundation plan checkpoint
+🟡 SCR-006 Expense domain foundation
 
 Next
 
-➡ Commit SCR-006 Expense foundation plan
+➡ Implement SCR-006 Expense domain foundation
 
 
 ---
