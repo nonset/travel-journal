@@ -120,6 +120,8 @@ Today Progress
 | Push SCR-002 Welcome | ✅ Completed | Pushed SCR-002 checkpoint to `origin/main` |
 | Implement SCR-003 Home | ✅ Completed | Added Home screen with empty trip state, quick actions, recent trips placeholder, and Create Trip entry points |
 | Verify SCR-003 Home | ✅ Completed | `flutter analyze` and `flutter test` passed after Home implementation |
+| Commit SCR-003 Home | ✅ Completed | Commit `d9cdb8e Implement SCR-003 home screen` |
+| Push SCR-003 Home | ✅ Completed | Pushed SCR-003 checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -139,8 +141,9 @@ Today Progress
 - [x] Commit SCR-002 Welcome implementation
 - [x] Push SCR-002 Welcome implementation to GitHub
 - [x] Start SCR-003 Home implementation
-- [ ] Commit SCR-003 Home implementation
-- [ ] Push SCR-003 Home implementation to GitHub
+- [x] Commit SCR-003 Home implementation
+- [x] Push SCR-003 Home implementation to GitHub
+- [ ] Start SCR-004 Create Trip implementation
 
 ---
 
@@ -251,10 +254,6 @@ None
 
 # 💡 Next Action
 
-Commit SCR-003 Home Screen implementation.
-
-After that,
-
 Start SCR-004 Create Trip.
 
 ---
@@ -301,11 +300,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-003 Home checkpoint
+🟡 SCR-004 Create Trip planning
 
 Next
 
-➡ Commit SCR-003 Home implementation
+➡ Implement SCR-004 Create Trip Screen
 
 
 ---
