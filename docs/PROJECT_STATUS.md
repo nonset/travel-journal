@@ -150,6 +150,8 @@ Today Progress
 | Push Create Trip local persistence | ✅ Completed | Pushed Create Trip persistence checkpoint to `origin/main` |
 | Show locally saved trips on Home | ✅ Completed | Home now reads `TripRepository.getTrips()` and shows saved trip cards instead of the empty state |
 | Verify Home saved trips | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 15 tests |
+| Commit Home saved trips | ✅ Completed | Commit `d31db86 Show saved trips on Home` |
+| Push Home saved trips | ✅ Completed | Pushed Home saved trips checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -190,8 +192,9 @@ Today Progress
 - [x] Commit Create Trip local persistence
 - [x] Push Create Trip local persistence to GitHub
 - [x] Show locally saved trips on Home
-- [ ] Commit Home saved trips
-- [ ] Push Home saved trips to GitHub
+- [x] Commit Home saved trips
+- [x] Push Home saved trips to GitHub
+- [ ] Verify saved trip cards reopen persisted Trip Dashboard data
 
 ---
 
@@ -302,11 +305,7 @@ None
 
 # 💡 Next Action
 
-Commit Home saved trips.
-
-After that,
-
-Wire saved trip cards to persisted Trip Dashboard data.
+Verify saved trip cards reopen persisted Trip Dashboard data.
 
 ---
 
@@ -352,11 +351,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Home saved trips checkpoint
+🟡 Saved trip dashboard reopen verification
 
 Next
 
-➡ Commit Home saved trips
+➡ Verify saved trip cards reopen persisted Trip Dashboard data
 
 
 ---
