@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-████████████░░░░░░░░░░░░ 36%
+█████████████░░░░░░░░░░░ 40%
 ```
 
 ---
@@ -56,9 +56,9 @@ Overall Progress
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
-| App Entry Screens | 33% | 🟡 In Progress | SCR-001 Splash is implemented; SCR-002 and SCR-003 are next |
+| App Entry Screens | 66% | 🟡 In Progress | SCR-001 Splash and SCR-002 Welcome are implemented; SCR-003 Home is next |
 | Core MVP Features | 0% | ⏳ Planned | Trip, expense, photo, note, and summary modules are not implemented yet |
-| Testing & QA | 20% | 🟡 In Progress | Scaffold, app shell, and SCR-001 pass `flutter analyze` and `flutter test` |
+| Testing & QA | 25% | 🟡 In Progress | Scaffold, app shell, SCR-001, and SCR-002 pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -72,7 +72,7 @@ Overall Progress
 | M4 | Flutter project scaffold created in `mobile/` | 100% | ✅ Completed |
 | M5 | App theme and folder architecture ready | 100% | ✅ Completed |
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
-| M7 | SCR-002 Welcome implemented and checked | 0% | ⏳ Planned |
+| M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 0% | ⏳ Planned |
 | M9 | Trip Management MVP implemented | 0% | ⏳ Planned |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
@@ -114,6 +114,8 @@ Today Progress
 | Verify SCR-001 Splash | ✅ Completed | `flutter analyze` and `flutter test` passed after Splash implementation |
 | Commit SCR-001 Splash | ✅ Completed | Commit `fe13caa Implement SCR-001 splash screen` |
 | Push SCR-001 Splash | ✅ Completed | Pushed SCR-001 checkpoint to `origin/main` |
+| Implement SCR-002 Welcome | ✅ Completed | Added Welcome screen and Splash-to-Welcome transition |
+| Verify SCR-002 Welcome | ✅ Completed | `flutter analyze` and `flutter test` passed after Welcome implementation |
 
 ## Today's Remaining Checklist
 
@@ -129,6 +131,9 @@ Today Progress
 - [x] Start SCR-001 Splash implementation
 - [x] Commit SCR-001 Splash implementation
 - [x] Push SCR-001 Splash implementation to GitHub
+- [x] Start SCR-002 Welcome implementation
+- [ ] Commit SCR-002 Welcome implementation
+- [ ] Push SCR-002 Welcome implementation to GitHub
 
 ---
 
@@ -223,6 +228,7 @@ Today Progress
 | Documentation | 🟡 |
 | Flutter Project | ✅ |
 | SCR-001 Splash | ✅ |
+| SCR-002 Welcome | ✅ |
 | MVP Complete | ⏳ |
 | Taiwan Beta | ⏳ |
 | Public Release | ⏳ |
@@ -238,7 +244,11 @@ None
 
 # 💡 Next Action
 
-Start SCR-002 Welcome Screen.
+Commit SCR-002 Welcome Screen implementation.
+
+After that,
+
+Start SCR-003 Home Screen.
 
 ---
 
@@ -250,7 +260,7 @@ Project Foundation
 
 Flutter project scaffold exists in `mobile/`.
 
-SCR-001 Splash has been implemented and verified with analyze/test.
+SCR-001 Splash and SCR-002 Welcome have been implemented and verified with analyze/test.
 
 Do not mark a screen as implemented until Flutter code exists and has been checked.
 
@@ -264,7 +274,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 |---------|------|:--------:|--------|
 | Sprint 0 | Project Setup | 100% | ✅ Completed |
 | Sprint 0.5 | Project Foundation | 90% | 🟡 In Progress |
-| Sprint 1 | App Entry | 33% | 🟡 In Progress |
+| Sprint 1 | App Entry | 66% | 🟡 In Progress |
 | Sprint 2 | Trip Management | 0% | ⏳ Planned |
 | Sprint 3 | Expense Tracking | 0% | ⏳ Planned |
 | Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
@@ -274,7 +284,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 | Screen ID | Screen | Spec | Implementation |
 |-----------|--------|------|----------------|
 | SCR-001 | Splash | 🟢 Approved | 🚀 Implemented |
-| SCR-002 | Welcome | ⬜ Not Started | ⏳ Not Started |
+| SCR-002 | Welcome | 🟢 Approved | 🚀 Implemented |
 | SCR-003 | Home | ⬜ Not Started | ⏳ Not Started |
 
 
@@ -284,11 +294,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-002 Welcome planning
+🟡 SCR-002 Welcome checkpoint
 
 Next
 
-➡ Implement SCR-002 Welcome Screen
+➡ Commit SCR-002 Welcome implementation
 
 
 ---
