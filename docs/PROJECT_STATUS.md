@@ -54,10 +54,10 @@ Overall Progress
 |------|:--------:|--------|-------|
 | Environment Setup | 100% | ✅ Completed | Git, Flutter, Android Studio, Android SDK are ready |
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
-| Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
+| Product Documentation | 86% | 🟡 In Progress | Core product, flow, screen, database, UI, and SCR-006 Expense foundation plans exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 35% | 🟡 In Progress | Home can reopen saved trips into Trip Dashboard |
+| Core MVP Features | 36% | 🟡 In Progress | Home can reopen saved trips into Trip Dashboard and SCR-006 Expense foundation is planned |
 | Testing & QA | 53% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, Home saved trips, and saved trip dashboard reopen pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
@@ -75,7 +75,7 @@ Overall Progress
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
 | M9 | Trip Management MVP implemented | 74% | 🟡 In Progress |
-| M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
+| M10 | Expense Tracking MVP implemented | 5% | 🟡 In Progress |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
 | M13 | Taiwan Beta build ready | 0% | ⏳ Planned |
@@ -156,6 +156,7 @@ Today Progress
 | Verify saved trip dashboard reopen tests | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 15 tests |
 | Commit saved trip dashboard reopen verification | ✅ Completed | Commit `405c12a Verify saved trip dashboard reopening` |
 | Push saved trip dashboard reopen verification | ✅ Completed | Pushed saved trip dashboard reopen checkpoint to `origin/main` |
+| Plan SCR-006 Expense foundation | ✅ Completed | Added Expense domain, repository, validation, UI-entry, and deferred-scope plan to `SERVICE_SPEC.md` |
 
 ## Today's Remaining Checklist
 
@@ -201,7 +202,9 @@ Today Progress
 - [x] Verify saved trip cards reopen persisted Trip Dashboard data
 - [x] Commit saved trip dashboard reopen verification
 - [x] Push saved trip dashboard reopen verification to GitHub
-- [ ] Plan SCR-006 Expense foundation
+- [x] Plan SCR-006 Expense foundation
+- [ ] Commit SCR-006 Expense foundation plan
+- [ ] Push SCR-006 Expense foundation plan to GitHub
 
 ---
 
@@ -312,7 +315,11 @@ None
 
 # 💡 Next Action
 
-Plan SCR-006 Expense foundation.
+Commit SCR-006 Expense foundation plan.
+
+After that,
+
+Implement SCR-006 Expense domain foundation.
 
 ---
 
@@ -340,7 +347,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 | Sprint 0.5 | Project Foundation | 90% | 🟡 In Progress |
 | Sprint 1 | App Entry | 100% | ✅ Completed |
 | Sprint 2 | Trip Management | 30% | 🟡 In Progress |
-| Sprint 3 | Expense Tracking | 0% | ⏳ Planned |
+| Sprint 3 | Expense Tracking | 5% | 🟡 In Progress |
 | Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
 
 ### Sprint 1 Tasks
@@ -358,11 +365,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Expense foundation planning
+🟡 SCR-006 Expense foundation plan checkpoint
 
 Next
 
-➡ Plan SCR-006 Expense foundation
+➡ Commit SCR-006 Expense foundation plan
 
 
 ---

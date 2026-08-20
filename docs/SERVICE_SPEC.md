@@ -108,7 +108,7 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Plan SCR-006 Expense foundation.
+Implement SCR-006 Expense domain foundation.
 
 ### Initial Drift Scope
 
@@ -140,6 +140,74 @@ Initial indexes:
 - `status`
 
 Do not implement Expense, Photo, Emotion, Daily Note, or Trip Summary tables until their feature screens are ready.
+
+---
+
+## SCR-006 Expense Foundation Plan
+
+Status: Planned
+
+### Goal
+
+Prepare the first Expense Recording slice so users can add a required, trip-linked expense from Trip Dashboard without interrupting the trip flow.
+
+### MVP Scope
+
+The first implementation should cover the minimum reliable Expense foundation:
+
+- `Expense` domain model
+- `ExpenseCategory` enum
+- `PaymentMethod` enum
+- `ExpenseRepository` contract
+- Temporary `InMemoryExpenseRepository`
+- Unit tests for validation, save/read, update, and soft delete behavior
+
+### Deferred From First Slice
+
+These should not be implemented in the first Expense foundation checkpoint:
+
+- Drift `expenses` table
+- Receipt photos
+- Emotion links
+- Location capture
+- Expense detail editing screen
+- Timeline aggregation
+- Trip Summary totals
+
+### Expense Repository Contract
+
+The Expense repository is responsible for:
+
+- Listing active expenses for one trip
+- Reading one expense by id
+- Saving a new or updated expense
+- Hiding soft-deleted expenses from normal reads
+
+### Expense Persistence Rules
+
+- Every expense belongs to one trip.
+- Amount must be greater than zero.
+- Category is required.
+- Currency is required.
+- Expense date is required.
+- Expense date must be within the trip date range before saving from the UI.
+- New local expense records start with `SyncStatus.local`.
+- Deleted expenses should be soft-deleted with `deletedAt`, not removed permanently.
+
+### First UI Direction
+
+SCR-006 should start from the Trip Dashboard `Add Expense` action.
+
+The first Add Expense screen should prioritize:
+
+- Amount input
+- Category selection
+- Currency selection
+- Expense date
+- Optional note
+- Save action
+
+Saving should feel instant and return the user to the trip context.
 
 ### Drift Dependencies
 
