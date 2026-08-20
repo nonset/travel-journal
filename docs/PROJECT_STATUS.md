@@ -146,6 +146,8 @@ Today Progress
 | Push Drift setup and trips table | ✅ Completed | Pushed Drift setup checkpoint to `origin/main` |
 | Wire Create Trip to local persistence | ✅ Completed | Create Trip now builds a `Trip`, saves through `TripRepository`, and then opens Trip Dashboard |
 | Verify Create Trip local persistence | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 14 tests |
+| Commit Create Trip local persistence | ✅ Completed | Commit `46d61cf Wire create trip to local persistence` |
+| Push Create Trip local persistence | ✅ Completed | Pushed Create Trip persistence checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -183,8 +185,9 @@ Today Progress
 - [x] Commit Drift setup and initial trips table
 - [x] Push Drift setup and initial trips table to GitHub
 - [x] Wire Create Trip to local Drift persistence
-- [ ] Commit Create Trip local persistence
-- [ ] Push Create Trip local persistence to GitHub
+- [x] Commit Create Trip local persistence
+- [x] Push Create Trip local persistence to GitHub
+- [ ] Show locally saved trips on Home
 
 ---
 
@@ -295,10 +298,6 @@ None
 
 # 💡 Next Action
 
-Commit Create Trip local persistence.
-
-After that,
-
 Show locally saved trips on Home.
 
 ---
@@ -345,11 +344,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Create Trip local persistence checkpoint
+🟡 Home saved trips planning
 
 Next
 
-➡ Commit Create Trip local persistence
+➡ Show locally saved trips on Home
 
 
 ---
