@@ -142,6 +142,8 @@ Today Progress
 | Add initial trips table | ✅ Completed | Added Drift `trips` table with Trip fields and country/start date/status indexes |
 | Implement Drift Trip repository | ✅ Completed | Added `DriftTripRepository` backed by `AppDatabase` |
 | Verify Drift Trip storage | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 14 tests |
+| Commit Drift setup and trips table | ✅ Completed | Commit `7b5d3c1 Add Drift trip storage setup` |
+| Push Drift setup and trips table | ✅ Completed | Pushed Drift setup checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -176,8 +178,9 @@ Today Progress
 - [x] Commit storage adapter decision
 - [x] Push storage adapter decision to GitHub
 - [x] Add Drift dependencies and initial trips table
-- [ ] Commit Drift setup and initial trips table
-- [ ] Push Drift setup and initial trips table to GitHub
+- [x] Commit Drift setup and initial trips table
+- [x] Push Drift setup and initial trips table to GitHub
+- [ ] Wire Create Trip to local Drift persistence
 
 ---
 
@@ -288,10 +291,6 @@ None
 
 # 💡 Next Action
 
-Commit Drift setup and initial `trips` table.
-
-After that,
-
 Wire Create Trip to local Drift persistence.
 
 ---
@@ -338,11 +337,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Trip Management Drift setup checkpoint
+🟡 Create Trip local persistence planning
 
 Next
 
-➡ Commit Drift setup and initial `trips` table
+➡ Wire Create Trip to local Drift persistence
 
 
 ---
