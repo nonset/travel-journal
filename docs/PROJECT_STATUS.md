@@ -87,7 +87,7 @@ Date: 2026-08-20
 ```
 Today Progress
 
-██████████████████████░░ 90%
+███████████████████████░ 95%
 ```
 
 | Task | Status | Result |
@@ -103,6 +103,8 @@ Today Progress
 | Push checkpoint to GitHub | ✅ Completed | Pushed documentation checkpoints to `origin/main` |
 | Create Flutter scaffold | ✅ Completed | Created Flutter app scaffold in `mobile/` |
 | Verify Flutter scaffold | ✅ Completed | `flutter analyze` and `flutter test` passed |
+| Commit Flutter scaffold | ✅ Completed | Commit `ce8fc9a Create Flutter mobile scaffold` |
+| Push Flutter scaffold | ✅ Completed | Pushed scaffold checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -110,7 +112,8 @@ Today Progress
 - [x] Push local commits to GitHub
 - [x] Create Flutter project scaffold in `mobile/`
 - [x] Re-check Git status after scaffold
-- [ ] Commit Flutter scaffold
+- [x] Commit Flutter scaffold
+- [x] Push Flutter scaffold to GitHub
 - [ ] Start SCR-001 Splash implementation
 
 ---
@@ -221,10 +224,6 @@ None
 
 # 💡 Next Action
 
-Commit the Flutter project scaffold.
-
-After that,
-
 Create app theme and folder architecture, then implement SCR-001 Splash Screen.
 
 ---
@@ -271,7 +270,7 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Flutter scaffold checkpoint
+🟡 Theme and folder architecture planning
 
 Next
 
