@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-██████████████████████░░ 70%
+███████████████████████░ 71%
 ```
 
 ---
@@ -54,10 +54,10 @@ Overall Progress
 |------|:--------:|--------|-------|
 | Environment Setup | 100% | ✅ Completed | Git, Flutter, Android Studio, Android SDK are ready |
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
-| Product Documentation | 86% | 🟡 In Progress | Core product, flow, screen, database, UI, and SCR-006 Expense foundation plans exist |
+| Product Documentation | 87% | 🟡 In Progress | Core product, flow, screen, database, UI, SCR-006 Expense foundation plan, and daily closeout status exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 36% | 🟡 In Progress | Home can reopen saved trips into Trip Dashboard and SCR-006 Expense foundation is planned |
+| Core MVP Features | 36% | 🟡 In Progress | Home can reopen saved trips into Trip Dashboard and SCR-006 Expense domain foundation is next |
 | Testing & QA | 53% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, Home saved trips, and saved trip dashboard reopen pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
@@ -67,7 +67,7 @@ Overall Progress
 |-----------|-----------|:--------:|--------|
 | M0 | Development environment ready | 100% | ✅ Completed |
 | M1 | Git repository and GitHub ready | 100% | ✅ Completed |
-| M2 | Core product documentation drafted | 85% | 🟡 In Progress |
+| M2 | Core product documentation drafted | 87% | 🟡 In Progress |
 | M3 | Documentation status aligned with reality | 100% | ✅ Completed |
 | M4 | Flutter project scaffold created in `mobile/` | 100% | ✅ Completed |
 | M5 | App theme and folder architecture ready | 100% | ✅ Completed |
@@ -159,6 +159,8 @@ Today Progress
 | Plan SCR-006 Expense foundation | ✅ Completed | Added Expense domain, repository, validation, UI-entry, and deferred-scope plan to `SERVICE_SPEC.md` |
 | Commit SCR-006 Expense foundation plan | ✅ Completed | Commit `bb2dfd4 Plan SCR-006 expense foundation` |
 | Push SCR-006 Expense foundation plan | ✅ Completed | Pushed SCR-006 Expense foundation plan to `origin/main` |
+| End-of-day project review | ✅ Completed | Reviewed Git status, recent checkpoints, milestone progress, and next action for tomorrow |
+| End-of-day Git status check | ✅ Completed | Working tree is clean on `main...origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -207,6 +209,8 @@ Today Progress
 - [x] Plan SCR-006 Expense foundation
 - [x] Commit SCR-006 Expense foundation plan
 - [x] Push SCR-006 Expense foundation plan to GitHub
+- [x] End-of-day project review
+- [x] Confirm Git is clean and synced with GitHub
 - [ ] Implement SCR-006 Expense domain foundation
 
 ---
@@ -343,7 +347,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 | Sprint | Goal | Progress | Status |
 |---------|------|:--------:|--------|
 | Sprint 0 | Project Setup | 100% | ✅ Completed |
-| Sprint 0.5 | Project Foundation | 90% | 🟡 In Progress |
+| Sprint 0.5 | Project Foundation | 92% | 🟡 In Progress |
 | Sprint 1 | App Entry | 100% | ✅ Completed |
 | Sprint 2 | Trip Management | 30% | 🟡 In Progress |
 | Sprint 3 | Expense Tracking | 5% | 🟡 In Progress |
@@ -364,7 +368,7 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Expense domain foundation
+🟡 Ready for SCR-006 Expense domain foundation
 
 Next
 
