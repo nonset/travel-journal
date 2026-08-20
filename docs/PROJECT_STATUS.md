@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-██████████░░░░░░░░░░░░░░ 28%
+███████████░░░░░░░░░░░░░ 32%
 ```
 
 ---
@@ -56,9 +56,9 @@ Overall Progress
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
-| App Entry Screens | 0% | ⏳ Planned | SCR-001 to SCR-003 are not implemented yet |
+| App Entry Screens | 5% | 🟡 In Progress | App entry feature folder exists; SCR-001 implementation is next |
 | Core MVP Features | 0% | ⏳ Planned | Trip, expense, photo, note, and summary modules are not implemented yet |
-| Testing & QA | 10% | 🟡 In Progress | Initial scaffold passes `flutter analyze` and `flutter test` |
+| Testing & QA | 15% | 🟡 In Progress | Scaffold and app shell pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -70,7 +70,7 @@ Overall Progress
 | M2 | Core product documentation drafted | 85% | 🟡 In Progress |
 | M3 | Documentation status aligned with reality | 100% | ✅ Completed |
 | M4 | Flutter project scaffold created in `mobile/` | 100% | ✅ Completed |
-| M5 | App theme and folder architecture ready | 0% | ⏳ Planned |
+| M5 | App theme and folder architecture ready | 100% | ✅ Completed |
 | M6 | SCR-001 Splash implemented and checked | 0% | ⏳ Planned |
 | M7 | SCR-002 Welcome implemented and checked | 0% | ⏳ Planned |
 | M8 | SCR-003 Home implemented and checked | 0% | ⏳ Planned |
@@ -87,7 +87,7 @@ Date: 2026-08-20
 ```
 Today Progress
 
-███████████████████████░ 95%
+████████████████████████ 100%
 ```
 
 | Task | Status | Result |
@@ -105,6 +105,9 @@ Today Progress
 | Verify Flutter scaffold | ✅ Completed | `flutter analyze` and `flutter test` passed |
 | Commit Flutter scaffold | ✅ Completed | Commit `ce8fc9a Create Flutter mobile scaffold` |
 | Push Flutter scaffold | ✅ Completed | Pushed scaffold checkpoint to `origin/main` |
+| Create app theme | ✅ Completed | Added UI_BIBLE-based light/dark Material 3 theme |
+| Create folder architecture | ✅ Completed | Added `src/app`, `src/core`, and `src/features/app_entry` structure |
+| Verify app shell | ✅ Completed | `flutter analyze` and `flutter test` passed after architecture update |
 
 ## Today's Remaining Checklist
 
@@ -114,6 +117,8 @@ Today Progress
 - [x] Re-check Git status after scaffold
 - [x] Commit Flutter scaffold
 - [x] Push Flutter scaffold to GitHub
+- [x] Create app theme and folder architecture
+- [ ] Commit theme and folder architecture
 - [ ] Start SCR-001 Splash implementation
 
 ---
@@ -224,7 +229,11 @@ None
 
 # 💡 Next Action
 
-Create app theme and folder architecture, then implement SCR-001 Splash Screen.
+Commit the app theme and folder architecture.
+
+After that,
+
+Implement SCR-001 Splash Screen.
 
 ---
 
@@ -270,11 +279,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Theme and folder architecture planning
+🟡 Theme and folder architecture checkpoint
 
 Next
 
-➡ Create app theme and folder architecture
+➡ Implement SCR-001 Splash Screen
 
 
 ---
