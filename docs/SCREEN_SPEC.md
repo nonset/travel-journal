@@ -70,7 +70,7 @@ Owner: Product Team
 |----|--------|-----|----------|--------|
 | 1 | Splash Screen | SCR-001 | High | 🚀 |
 | 2 | Welcome Screen | SCR-002 | High | 🚀 |
-| 3 | Home Screen | SCR-003 | High | ⬜ |
+| 3 | Home Screen | SCR-003 | High | 🚀 |
 | 4 | Create Trip | SCR-004 | High | ⬜ |
 | 5 | Trip Dashboard | SCR-005 | High | ⬜ |
 | 6 | Expense Screen | SCR-006 | High | ⬜ |
@@ -384,7 +384,7 @@ Screen ID : SCR-003
 
 Priority : High
 
-Status : ⬜ Not Started
+Status : 🚀 Implemented
 
 > (รายละเอียด)
 

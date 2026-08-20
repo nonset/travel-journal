@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import 'home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -49,17 +50,30 @@ class WelcomeScreen extends StatelessWidget {
               ),
               const Spacer(),
               FilledButton(
-                onPressed: () {},
+                onPressed: () => _openHome(context),
                 child: const Text(AppStrings.welcomePrimaryAction),
               ),
               const SizedBox(height: AppSpacing.sm),
               TextButton(
-                onPressed: () {},
+                onPressed: () => _openHome(context),
                 child: const Text(AppStrings.welcomeSecondaryAction),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void _openHome(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder<void>(
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return const HomeScreen();
+        },
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
       ),
     );
   }

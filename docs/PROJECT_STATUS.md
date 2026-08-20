@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-██████████████░░░░░░░░░░ 42%
+███████████████░░░░░░░░░ 46%
 ```
 
 ---
@@ -56,9 +56,9 @@ Overall Progress
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
-| App Entry Screens | 66% | 🟡 In Progress | SCR-001 Splash and SCR-002 Welcome are implemented; SCR-003 Home is next |
+| App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
 | Core MVP Features | 0% | ⏳ Planned | Trip, expense, photo, note, and summary modules are not implemented yet |
-| Testing & QA | 28% | 🟡 In Progress | Scaffold, app shell, SCR-001, and SCR-002 pass `flutter analyze` and `flutter test` |
+| Testing & QA | 32% | 🟡 In Progress | Scaffold, app shell, SCR-001, SCR-002, and SCR-003 pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -73,7 +73,7 @@ Overall Progress
 | M5 | App theme and folder architecture ready | 100% | ✅ Completed |
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
-| M8 | SCR-003 Home implemented and checked | 0% | ⏳ Planned |
+| M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
 | M9 | Trip Management MVP implemented | 0% | ⏳ Planned |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
@@ -118,6 +118,8 @@ Today Progress
 | Verify SCR-002 Welcome | ✅ Completed | `flutter analyze` and `flutter test` passed after Welcome implementation |
 | Commit SCR-002 Welcome | ✅ Completed | Commit `7b05494 Implement SCR-002 welcome screen` |
 | Push SCR-002 Welcome | ✅ Completed | Pushed SCR-002 checkpoint to `origin/main` |
+| Implement SCR-003 Home | ✅ Completed | Added Home screen with empty trip state, quick actions, recent trips placeholder, and Create Trip entry points |
+| Verify SCR-003 Home | ✅ Completed | `flutter analyze` and `flutter test` passed after Home implementation |
 
 ## Today's Remaining Checklist
 
@@ -136,7 +138,9 @@ Today Progress
 - [x] Start SCR-002 Welcome implementation
 - [x] Commit SCR-002 Welcome implementation
 - [x] Push SCR-002 Welcome implementation to GitHub
-- [ ] Start SCR-003 Home implementation
+- [x] Start SCR-003 Home implementation
+- [ ] Commit SCR-003 Home implementation
+- [ ] Push SCR-003 Home implementation to GitHub
 
 ---
 
@@ -247,7 +251,11 @@ None
 
 # 💡 Next Action
 
-Start SCR-003 Home Screen.
+Commit SCR-003 Home Screen implementation.
+
+After that,
+
+Start SCR-004 Create Trip.
 
 ---
 
@@ -259,7 +267,7 @@ Project Foundation
 
 Flutter project scaffold exists in `mobile/`.
 
-SCR-001 Splash and SCR-002 Welcome have been implemented and verified with analyze/test.
+SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home have been implemented and verified with analyze/test.
 
 Do not mark a screen as implemented until Flutter code exists and has been checked.
 
@@ -273,7 +281,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 |---------|------|:--------:|--------|
 | Sprint 0 | Project Setup | 100% | ✅ Completed |
 | Sprint 0.5 | Project Foundation | 90% | 🟡 In Progress |
-| Sprint 1 | App Entry | 66% | 🟡 In Progress |
+| Sprint 1 | App Entry | 100% | ✅ Completed |
 | Sprint 2 | Trip Management | 0% | ⏳ Planned |
 | Sprint 3 | Expense Tracking | 0% | ⏳ Planned |
 | Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
@@ -284,7 +292,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 |-----------|--------|------|----------------|
 | SCR-001 | Splash | 🟢 Approved | 🚀 Implemented |
 | SCR-002 | Welcome | 🟢 Approved | 🚀 Implemented |
-| SCR-003 | Home | ⬜ Not Started | ⏳ Not Started |
+| SCR-003 | Home | 🟢 Approved | 🚀 Implemented |
 
 
 ## 🎯 Current Sprint
@@ -293,11 +301,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-003 Home planning
+🟡 SCR-003 Home checkpoint
 
 Next
 
-➡ Implement SCR-003 Home Screen
+➡ Commit SCR-003 Home implementation
 
 
 ---
