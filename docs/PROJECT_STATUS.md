@@ -136,6 +136,8 @@ Today Progress
 | Commit Trip persistence foundation | ✅ Completed | Commit `e250fff Add trip persistence foundation` |
 | Push Trip persistence foundation | ✅ Completed | Pushed Trip persistence foundation checkpoint to `origin/main` |
 | Choose permanent local storage adapter | ✅ Completed | Selected Drift on SQLite for typed offline-first Trip persistence |
+| Commit storage adapter decision | ✅ Completed | Commit `cb52fda Choose Drift for local trip storage` |
+| Push storage adapter decision | ✅ Completed | Pushed Drift/SQLite decision checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -167,8 +169,9 @@ Today Progress
 - [x] Commit Trip Management persistence foundation
 - [x] Push Trip Management persistence foundation to GitHub
 - [x] Choose permanent local storage adapter
-- [ ] Commit storage adapter decision
-- [ ] Push storage adapter decision to GitHub
+- [x] Commit storage adapter decision
+- [x] Push storage adapter decision to GitHub
+- [ ] Add Drift dependencies and initial trips table
 
 ---
 
@@ -279,10 +282,6 @@ None
 
 # 💡 Next Action
 
-Commit storage adapter decision.
-
-After that,
-
 Add Drift dependencies and initial `trips` table.
 
 ---
@@ -329,11 +328,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Trip Management storage adapter decision checkpoint
+🟡 Trip Management Drift setup planning
 
 Next
 
-➡ Commit Drift/SQLite storage adapter decision
+➡ Add Drift dependencies and initial `trips` table
 
 
 ---
