@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import 'trip_dashboard_screen.dart';
 
 class CreateTripScreen extends StatefulWidget {
   const CreateTripScreen({super.key});
@@ -158,6 +159,18 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(const SnackBar(content: Text(AppStrings.createTripSaved)));
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(
+        builder: (context) {
+          return TripDashboardScreen(
+            tripName: _tripNameController.text.trim(),
+            country: _countryController.text.trim(),
+            startDate: _startDate,
+            endDate: _endDate,
+          );
+        },
+      ),
+    );
   }
 }
 

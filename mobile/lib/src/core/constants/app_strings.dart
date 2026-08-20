@@ -42,4 +42,19 @@ class AppStrings {
   static const createTripCountryRequired = 'Country is required';
   static const createTripDateInvalid = 'End date must be after start date';
   static const createTripSaved = 'Trip draft saved';
+  static const tripDashboardTitle = 'Trip Dashboard';
+  static const tripDashboardStatus = 'Active trip';
+  static const tripDashboardOverview = 'Trip overview';
+  static const tripDashboardQuickActions = 'What would you like to record?';
+  static const tripDashboardRecentActivity = 'Recent activity';
+  static const tripDashboardNoActivity = 'No memories recorded yet';
+  static const tripDashboardNoActivitySubtitle =
+      'Start with an expense, photo, mood, or daily note.';
+  static const tripDashboardAddExpense = 'Add Expense';
+  static const tripDashboardAddPhoto = 'Add Photo';
+  static const tripDashboardAddEmotion = 'Add Mood';
+  static const tripDashboardAddNote = 'Add Note';
+  static const tripDashboardTimeline = 'Timeline';
+  static const tripDashboardSummary = 'Summary';
+  static const tripDashboardSettingsTooltip = 'Trip settings';
 }

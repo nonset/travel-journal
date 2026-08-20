@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_journal/src/app/travel_journal_app.dart';
 import 'package:travel_journal/src/core/constants/app_strings.dart';
@@ -73,7 +74,7 @@ void main() {
     expect(find.text(AppStrings.createTripCountryRequired), findsOneWidget);
   });
 
-  testWidgets('saves create trip draft when required fields are filled', (
+  testWidgets('opens trip dashboard after creating a trip', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(const TravelJournalApp());
@@ -93,8 +94,17 @@ void main() {
       'Taiwan',
     );
     await tester.tap(find.text(AppStrings.createTripSave));
-    await tester.pump();
+    await tester.pumpAndSettle();
 
-    expect(find.text(AppStrings.createTripSaved), findsOneWidget);
+    expect(find.text(AppStrings.tripDashboardTitle), findsOneWidget);
+    expect(find.text('Taiwan Beta Trip 2026'), findsOneWidget);
+    expect(find.text('Taiwan'), findsOneWidget);
+    expect(find.text(AppStrings.tripDashboardQuickActions), findsOneWidget);
+    expect(find.text(AppStrings.tripDashboardAddExpense), findsOneWidget);
+
+    await tester.drag(find.byType(Scrollable), const Offset(0, -600));
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.tripDashboardNoActivity), findsOneWidget);
   });
 }

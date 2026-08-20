@@ -72,7 +72,7 @@ Owner: Product Team
 | 2 | Welcome Screen | SCR-002 | High | 🚀 |
 | 3 | Home Screen | SCR-003 | High | 🚀 |
 | 4 | Create Trip | SCR-004 | High | 🚀 |
-| 5 | Trip Dashboard | SCR-005 | High | ⬜ |
+| 5 | Trip Dashboard | SCR-005 | High | 🚀 |
 | 6 | Expense Screen | SCR-006 | High | ⬜ |
 | 7 | Photo Screen | SCR-007 | Medium | ⬜ |
 | 8 | Emotion Screen | SCR-008 | Medium | ⬜ |
@@ -408,7 +408,7 @@ Screen ID : SCR-005
 
 Priority : High
 
-Status : ⬜ Not Started
+Status : 🚀 Implemented
 
 > (รายละเอียด)
 
