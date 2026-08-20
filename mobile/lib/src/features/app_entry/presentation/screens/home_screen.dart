@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../trip_management/presentation/screens/create_trip_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () => _openCreateTrip(context),
         icon: const Icon(Icons.add_rounded),
         label: const Text(AppStrings.homeCreateTrip),
       ),
@@ -42,7 +43,11 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: AppSpacing.sm),
             Text(AppStrings.homeSubtitle, style: textTheme.bodyLarge),
             const SizedBox(height: AppSpacing.xl),
-            _EmptyTripCard(colorScheme: colorScheme, textTheme: textTheme),
+            _EmptyTripCard(
+              colorScheme: colorScheme,
+              textTheme: textTheme,
+              onCreateTrip: () => _openCreateTrip(context),
+            ),
             const SizedBox(height: AppSpacing.xl),
             Text(AppStrings.homeQuickActions, style: textTheme.titleLarge),
             const SizedBox(height: AppSpacing.md),
@@ -59,13 +64,24 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  void _openCreateTrip(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(builder: (context) => const CreateTripScreen()),
+    );
+  }
 }
 
 class _EmptyTripCard extends StatelessWidget {
-  const _EmptyTripCard({required this.colorScheme, required this.textTheme});
+  const _EmptyTripCard({
+    required this.colorScheme,
+    required this.textTheme,
+    required this.onCreateTrip,
+  });
 
   final ColorScheme colorScheme;
   final TextTheme textTheme;
+  final VoidCallback onCreateTrip;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +111,7 @@ class _EmptyTripCard extends StatelessWidget {
             Text(AppStrings.homeEmptySubtitle, style: textTheme.bodyMedium),
             const SizedBox(height: AppSpacing.lg),
             FilledButton.icon(
-              onPressed: () {},
+              onPressed: onCreateTrip,
               icon: const Icon(Icons.add_rounded),
               label: const Text(AppStrings.homeCreateTrip),
             ),

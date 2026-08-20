@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-███████████████░░░░░░░░░ 46%
+████████████████░░░░░░░░ 50%
 ```
 
 ---
@@ -57,8 +57,8 @@ Overall Progress
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 0% | ⏳ Planned | Trip, expense, photo, note, and summary modules are not implemented yet |
-| Testing & QA | 32% | 🟡 In Progress | Scaffold, app shell, SCR-001, SCR-002, and SCR-003 pass `flutter analyze` and `flutter test` |
+| Core MVP Features | 8% | 🟡 In Progress | Create Trip form is implemented; persistence and dashboard are next |
+| Testing & QA | 36% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-004 pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -74,7 +74,7 @@ Overall Progress
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
-| M9 | Trip Management MVP implemented | 0% | ⏳ Planned |
+| M9 | Trip Management MVP implemented | 15% | 🟡 In Progress |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
@@ -122,6 +122,8 @@ Today Progress
 | Verify SCR-003 Home | ✅ Completed | `flutter analyze` and `flutter test` passed after Home implementation |
 | Commit SCR-003 Home | ✅ Completed | Commit `d9cdb8e Implement SCR-003 home screen` |
 | Push SCR-003 Home | ✅ Completed | Pushed SCR-003 checkpoint to `origin/main` |
+| Implement SCR-004 Create Trip | ✅ Completed | Added required trip name/country fields, travel date selectors, optional cover placeholder, validation, and save feedback |
+| Verify SCR-004 Create Trip | ✅ Completed | `flutter analyze` and `flutter test` passed after Create Trip implementation |
 
 ## Today's Remaining Checklist
 
@@ -143,7 +145,9 @@ Today Progress
 - [x] Start SCR-003 Home implementation
 - [x] Commit SCR-003 Home implementation
 - [x] Push SCR-003 Home implementation to GitHub
-- [ ] Start SCR-004 Create Trip implementation
+- [x] Start SCR-004 Create Trip implementation
+- [ ] Commit SCR-004 Create Trip implementation
+- [ ] Push SCR-004 Create Trip implementation to GitHub
 
 ---
 
@@ -254,7 +258,11 @@ None
 
 # 💡 Next Action
 
-Start SCR-004 Create Trip.
+Commit SCR-004 Create Trip Screen implementation.
+
+After that,
+
+Start SCR-005 Trip Dashboard.
 
 ---
 
@@ -266,7 +274,7 @@ Project Foundation
 
 Flutter project scaffold exists in `mobile/`.
 
-SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home have been implemented and verified with analyze/test.
+SCR-001 Splash, SCR-002 Welcome, SCR-003 Home, and SCR-004 Create Trip have been implemented and verified with analyze/test.
 
 Do not mark a screen as implemented until Flutter code exists and has been checked.
 
@@ -281,7 +289,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 | Sprint 0 | Project Setup | 100% | ✅ Completed |
 | Sprint 0.5 | Project Foundation | 90% | 🟡 In Progress |
 | Sprint 1 | App Entry | 100% | ✅ Completed |
-| Sprint 2 | Trip Management | 0% | ⏳ Planned |
+| Sprint 2 | Trip Management | 15% | 🟡 In Progress |
 | Sprint 3 | Expense Tracking | 0% | ⏳ Planned |
 | Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
 
@@ -300,11 +308,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-004 Create Trip planning
+🟡 SCR-004 Create Trip checkpoint
 
 Next
 
-➡ Implement SCR-004 Create Trip Screen
+➡ Commit SCR-004 Create Trip implementation
 
 
 ---

@@ -36,4 +36,65 @@ void main() {
     expect(find.text(AppStrings.homeCreateTrip), findsWidgets);
     expect(find.text(AppStrings.homeQuickActions), findsOneWidget);
   });
+
+  testWidgets('opens create trip screen from home', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pump(const Duration(milliseconds: 1300));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.welcomePrimaryAction));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text(AppStrings.homeCreateTrip).first);
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.createTripTitle), findsWidgets);
+    expect(find.text(AppStrings.createTripNameLabel), findsOneWidget);
+    expect(find.text(AppStrings.createTripCountryLabel), findsOneWidget);
+    expect(find.text(AppStrings.createTripSave), findsOneWidget);
+  });
+
+  testWidgets('validates required create trip fields', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pump(const Duration(milliseconds: 1300));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.welcomePrimaryAction));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.homeCreateTrip).first);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text(AppStrings.createTripSave));
+    await tester.pump();
+
+    expect(find.text(AppStrings.createTripNameRequired), findsOneWidget);
+    expect(find.text(AppStrings.createTripCountryRequired), findsOneWidget);
+  });
+
+  testWidgets('saves create trip draft when required fields are filled', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pump(const Duration(milliseconds: 1300));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.welcomePrimaryAction));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.homeCreateTrip).first);
+    await tester.pumpAndSettle();
+
+    await tester.enterText(
+      find.bySemanticsLabel(AppStrings.createTripNameLabel),
+      'Taiwan Beta Trip 2026',
+    );
+    await tester.enterText(
+      find.bySemanticsLabel(AppStrings.createTripCountryLabel),
+      'Taiwan',
+    );
+    await tester.tap(find.text(AppStrings.createTripSave));
+    await tester.pump();
+
+    expect(find.text(AppStrings.createTripSaved), findsOneWidget);
+  });
 }
