@@ -154,6 +154,8 @@ Today Progress
 | Push Home saved trips | ✅ Completed | Pushed Home saved trips checkpoint to `origin/main` |
 | Verify saved trip dashboard reopen | ✅ Completed | Home saved trip cards now have widget coverage for opening Trip Dashboard with persisted trip data |
 | Verify saved trip dashboard reopen tests | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 15 tests |
+| Commit saved trip dashboard reopen verification | ✅ Completed | Commit `405c12a Verify saved trip dashboard reopening` |
+| Push saved trip dashboard reopen verification | ✅ Completed | Pushed saved trip dashboard reopen checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -197,8 +199,9 @@ Today Progress
 - [x] Commit Home saved trips
 - [x] Push Home saved trips to GitHub
 - [x] Verify saved trip cards reopen persisted Trip Dashboard data
-- [ ] Commit saved trip dashboard reopen verification
-- [ ] Push saved trip dashboard reopen verification to GitHub
+- [x] Commit saved trip dashboard reopen verification
+- [x] Push saved trip dashboard reopen verification to GitHub
+- [ ] Plan SCR-006 Expense foundation
 
 ---
 
@@ -309,10 +312,6 @@ None
 
 # 💡 Next Action
 
-Commit saved trip dashboard reopen verification.
-
-After that,
-
 Plan SCR-006 Expense foundation.
 
 ---
@@ -359,11 +358,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Saved trip dashboard reopen checkpoint
+🟡 SCR-006 Expense foundation planning
 
 Next
 
-➡ Commit saved trip dashboard reopen verification
+➡ Plan SCR-006 Expense foundation
 
 
 ---
