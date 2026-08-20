@@ -1,6 +1,6 @@
 # 📊 Project Status
 
-> Last Updated: 2026-07-06
+> Last Updated: 2026-08-20
 
 ---
 
@@ -16,7 +16,7 @@ v0.0.1 Alpha
 
 **Current Sprint**
 
-Sprint 1 — Project Foundation
+Sprint 0.5 — Project Foundation
 
 **Project Status**
 
@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-████████░░░░░░░░░░░░░░░░ 25%
+███████░░░░░░░░░░░░░░░░░ 20%
 ```
 
 ---
@@ -70,47 +70,60 @@ Overall Progress
 
 - [x] README.md
 - [x] Folder Structure
+- [x] PRD.md
+- [x] FEATURE_LIST.md
+- [x] USER_FLOW.md
+- [x] UI_BIBLE.md
+- [x] DATABASE.md
+- [x] SCREEN_SPEC.md
+- [x] WIREFRAME.md (SCR-001 draft)
 
 ---
 
 # 🟡 In Progress
 
 - [x] PROJECT_STATUS.md
-- [x] PRD.md
 - [ ] ROADMAP.md
 - [ ] DEVLOG.md
-- [ ] FEATURE_LIST.md
-- [ ] USER_FLOW.md
-- [ ] UI_BIBLE.md
-- [ ] DATABASE.md
 - [ ] API.md
+- [ ] SERVICE_SPEC.md
+- [ ] COMPONENT_SPEC.md
 
 ---
 
 # ⏳ Upcoming
 
-## Sprint 2
+## Next
 
 - Flutter Project
 - Folder Architecture
 - Theme
+- SCR-001 Splash Screen implementation
+
+---
+
+## Sprint 1
+
+- App Entry
+- Splash Screen
+- Welcome Screen
 - Home Screen
 
 ---
 
-## Sprint 3
+## Sprint 2
 
 - Trip Management
 
 ---
 
-## Sprint 4
+## Sprint 3
 
 - Expense Tracking
 
 ---
 
-## Sprint 5
+## Sprint 4
 
 - Photo Journal
 
@@ -123,6 +136,7 @@ Overall Progress
 | Environment Ready | ✅ |
 | Documentation | 🟡 |
 | Flutter Project | ⏳ |
+| SCR-001 Splash | ⏳ |
 | MVP Complete | ⏳ |
 | Taiwan Beta | ⏳ |
 | Public Release | ⏳ |
@@ -138,11 +152,11 @@ None
 
 # 💡 Next Action
 
-Complete all project documentation.
+Finish documentation cleanup and create the Flutter project scaffold in `mobile/`.
 
 After that,
 
-Create the first Flutter project.
+Implement SCR-001 Splash Screen.
 
 ---
 
@@ -152,20 +166,48 @@ Current priority:
 
 Project Foundation
 
-Do not start developing features until documentation is completed.
+Flutter project has not been created yet.
+
+SCR-001 Splash has a draft spec and wireframe, but it is not implemented.
+
+Do not mark a screen as implemented until Flutter code exists and has been checked.
 
 ---
 
 # 🏆 Sprint History
 
-| Sprint | Status |
-|----------|--------|
-| Sprint 0 | ✅ Completed |
-| Sprint 1 | 🟡 In Progress |
-| Sprint 2 | ⏳ |
-| Sprint 3 | ⏳ |
-| Sprint 4 | ⏳ |
-| Sprint 5 | ⏳ |
+## 🏁 Sprint Progress
+
+| Sprint | Goal | Progress | Status |
+|---------|------|:--------:|--------|
+| Sprint 0 | Project Setup | 100% | ✅ Completed |
+| Sprint 0.5 | Project Foundation | 80% | 🟡 In Progress |
+| Sprint 1 | App Entry | 0% | ⏳ Planned |
+| Sprint 2 | Trip Management | 0% | ⏳ Planned |
+| Sprint 3 | Expense Tracking | 0% | ⏳ Planned |
+| Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
+
+### Sprint 1 Tasks
+
+| Screen ID | Screen | Spec | Implementation |
+|-----------|--------|------|----------------|
+| SCR-001 | Splash | 🟡 Draft | ⏳ Not Started |
+| SCR-002 | Welcome | ⬜ Not Started | ⏳ Not Started |
+| SCR-003 | Home | ⬜ Not Started | ⏳ Not Started |
+
+
+## 🎯 Current Sprint
+
+Sprint 0.5 : Project Foundation
+
+Current Task
+
+🟡 Documentation cleanup and status alignment
+
+Next
+
+➡ Create Flutter project scaffold in `mobile/`
+
 
 ---
 
