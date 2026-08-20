@@ -133,6 +133,8 @@ Today Progress
 | Plan Trip Management persistence | ✅ Completed | Updated `SERVICE_SPEC.md` with Trip repository responsibilities, local storage flow, storage options, and persistence rules |
 | Implement Trip domain foundation | ✅ Completed | Added `Trip`, `TripStatus`, `SyncStatus`, `TripRepository`, and temporary `InMemoryTripRepository` |
 | Verify Trip persistence foundation | ✅ Completed | `flutter analyze` and `flutter test` passed with 11 tests |
+| Commit Trip persistence foundation | ✅ Completed | Commit `e250fff Add trip persistence foundation` |
+| Push Trip persistence foundation | ✅ Completed | Pushed Trip persistence foundation checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -161,8 +163,9 @@ Today Progress
 - [x] Commit SCR-005 Trip Dashboard implementation
 - [x] Push SCR-005 Trip Dashboard implementation to GitHub
 - [x] Start Trip Management persistence planning
-- [ ] Commit Trip Management persistence foundation
-- [ ] Push Trip Management persistence foundation to GitHub
+- [x] Commit Trip Management persistence foundation
+- [x] Push Trip Management persistence foundation to GitHub
+- [ ] Choose permanent local storage adapter
 
 ---
 
@@ -273,10 +276,6 @@ None
 
 # 💡 Next Action
 
-Commit Trip Management persistence foundation.
-
-After that,
-
 Choose permanent local storage adapter for Trip Management.
 
 ---
@@ -323,11 +322,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Trip Management persistence checkpoint
+🟡 Trip Management storage adapter decision
 
 Next
 
-➡ Commit Trip Management persistence foundation
+➡ Choose SQLite/Drift or another local storage adapter
 
 
 ---
