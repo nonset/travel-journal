@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../domain/models/trip.dart';
+import '../../domain/repositories/trip_repository.dart';
 import 'trip_dashboard_screen.dart';
 
 class CreateTripScreen extends StatefulWidget {
-  const CreateTripScreen({super.key});
+  const CreateTripScreen({required this.tripRepository, super.key});
+
+  final TripRepository tripRepository;
 
   @override
   State<CreateTripScreen> createState() => _CreateTripScreenState();
@@ -17,6 +21,7 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
   final _countryController = TextEditingController();
   late DateTime _startDate;
   late DateTime _endDate;
+  var _isSaving = false;
 
   @override
   void initState() {
@@ -85,7 +90,7 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
               const _CoverPhotoPlaceholder(),
               const SizedBox(height: AppSpacing.xl),
               FilledButton.icon(
-                onPressed: _saveTrip,
+                onPressed: _isSaving ? null : _saveTrip,
                 icon: const Icon(Icons.check_rounded),
                 label: const Text(AppStrings.createTripSave),
               ),
@@ -143,7 +148,7 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
     });
   }
 
-  void _saveTrip() {
+  Future<void> _saveTrip() async {
     final isValid = _formKey.currentState?.validate() ?? false;
     if (!isValid) {
       return;
@@ -156,6 +161,25 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
       return;
     }
 
+    setState(() {
+      _isSaving = true;
+    });
+
+    final trip = Trip.create(
+      id: 'trip-${DateTime.now().microsecondsSinceEpoch}',
+      title: _tripNameController.text,
+      country: _countryController.text,
+      startDate: _startDate,
+      endDate: _endDate,
+      createdAt: DateTime.now(),
+    );
+
+    await widget.tripRepository.saveTrip(trip);
+
+    if (!mounted) {
+      return;
+    }
+
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(const SnackBar(content: Text(AppStrings.createTripSaved)));
@@ -163,10 +187,10 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
       MaterialPageRoute<void>(
         builder: (context) {
           return TripDashboardScreen(
-            tripName: _tripNameController.text.trim(),
-            country: _countryController.text.trim(),
-            startDate: _startDate,
-            endDate: _endDate,
+            tripName: trip.title,
+            country: trip.country,
+            startDate: trip.startDate,
+            endDate: trip.endDate,
           );
         },
       ),

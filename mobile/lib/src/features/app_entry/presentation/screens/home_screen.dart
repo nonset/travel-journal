@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../trip_management/domain/repositories/trip_repository.dart';
 import '../../../trip_management/presentation/screens/create_trip_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({required this.tripRepository, super.key});
+
+  final TripRepository tripRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +70,9 @@ class HomeScreen extends StatelessWidget {
 
   void _openCreateTrip(BuildContext context) {
     Navigator.of(context).push(
-      MaterialPageRoute<void>(builder: (context) => const CreateTripScreen()),
+      MaterialPageRoute<void>(
+        builder: (context) => CreateTripScreen(tripRepository: tripRepository),
+      ),
     );
   }
 }

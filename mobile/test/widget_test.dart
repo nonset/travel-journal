@@ -2,19 +2,20 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_journal/src/app/travel_journal_app.dart';
 import 'package:travel_journal/src/core/constants/app_strings.dart';
+import 'package:travel_journal/src/features/trip_management/data/repositories/in_memory_trip_repository.dart';
 
 void main() {
   testWidgets('shows splash screen before welcome', (
     WidgetTester tester,
   ) async {
-    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pumpWidget(_buildTestApp());
 
     expect(find.text(AppStrings.appName), findsOneWidget);
     expect(find.text(AppStrings.loading), findsOneWidget);
   });
 
   testWidgets('opens welcome screen after splash', (WidgetTester tester) async {
-    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pumpWidget(_buildTestApp());
     await tester.pump(const Duration(milliseconds: 1300));
     await tester.pumpAndSettle();
 
@@ -25,7 +26,7 @@ void main() {
   });
 
   testWidgets('opens home screen from welcome', (WidgetTester tester) async {
-    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pumpWidget(_buildTestApp());
     await tester.pump(const Duration(milliseconds: 1300));
     await tester.pumpAndSettle();
 
@@ -41,7 +42,7 @@ void main() {
   testWidgets('opens create trip screen from home', (
     WidgetTester tester,
   ) async {
-    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pumpWidget(_buildTestApp());
     await tester.pump(const Duration(milliseconds: 1300));
     await tester.pumpAndSettle();
     await tester.tap(find.text(AppStrings.welcomePrimaryAction));
@@ -59,7 +60,7 @@ void main() {
   testWidgets('validates required create trip fields', (
     WidgetTester tester,
   ) async {
-    await tester.pumpWidget(const TravelJournalApp());
+    await tester.pumpWidget(_buildTestApp());
     await tester.pump(const Duration(milliseconds: 1300));
     await tester.pumpAndSettle();
     await tester.tap(find.text(AppStrings.welcomePrimaryAction));
@@ -77,7 +78,9 @@ void main() {
   testWidgets('opens trip dashboard after creating a trip', (
     WidgetTester tester,
   ) async {
-    await tester.pumpWidget(const TravelJournalApp());
+    final repository = InMemoryTripRepository();
+
+    await tester.pumpWidget(TravelJournalApp(tripRepository: repository));
     await tester.pump(const Duration(milliseconds: 1300));
     await tester.pumpAndSettle();
     await tester.tap(find.text(AppStrings.welcomePrimaryAction));
@@ -106,5 +109,14 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.tripDashboardNoActivity), findsOneWidget);
+
+    final trips = await repository.getTrips();
+    expect(trips, hasLength(1));
+    expect(trips.single.title, 'Taiwan Beta Trip 2026');
+    expect(trips.single.country, 'Taiwan');
   });
+}
+
+TravelJournalApp _buildTestApp() {
+  return TravelJournalApp(tripRepository: InMemoryTripRepository());
 }

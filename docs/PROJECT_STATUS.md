@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-████████████████████░░░░ 64%
+█████████████████████░░░ 67%
 ```
 
 ---
@@ -57,8 +57,8 @@ Overall Progress
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 25% | 🟡 In Progress | Drift dependencies, initial trips table, and Drift-backed Trip repository are implemented |
-| Testing & QA | 48% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, and in-memory/Drift repositories pass `flutter analyze` and `flutter test` |
+| Core MVP Features | 30% | 🟡 In Progress | Create Trip now saves through TripRepository before opening Trip Dashboard |
+| Testing & QA | 50% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, and Create Trip save flow pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -74,7 +74,7 @@ Overall Progress
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
-| M9 | Trip Management MVP implemented | 55% | 🟡 In Progress |
+| M9 | Trip Management MVP implemented | 65% | 🟡 In Progress |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
@@ -144,6 +144,8 @@ Today Progress
 | Verify Drift Trip storage | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 14 tests |
 | Commit Drift setup and trips table | ✅ Completed | Commit `7b5d3c1 Add Drift trip storage setup` |
 | Push Drift setup and trips table | ✅ Completed | Pushed Drift setup checkpoint to `origin/main` |
+| Wire Create Trip to local persistence | ✅ Completed | Create Trip now builds a `Trip`, saves through `TripRepository`, and then opens Trip Dashboard |
+| Verify Create Trip local persistence | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 14 tests |
 
 ## Today's Remaining Checklist
 
@@ -180,7 +182,9 @@ Today Progress
 - [x] Add Drift dependencies and initial trips table
 - [x] Commit Drift setup and initial trips table
 - [x] Push Drift setup and initial trips table to GitHub
-- [ ] Wire Create Trip to local Drift persistence
+- [x] Wire Create Trip to local Drift persistence
+- [ ] Commit Create Trip local persistence
+- [ ] Push Create Trip local persistence to GitHub
 
 ---
 
@@ -291,7 +295,11 @@ None
 
 # 💡 Next Action
 
-Wire Create Trip to local Drift persistence.
+Commit Create Trip local persistence.
+
+After that,
+
+Show locally saved trips on Home.
 
 ---
 
@@ -337,11 +345,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Create Trip local persistence planning
+🟡 Create Trip local persistence checkpoint
 
 Next
 
-➡ Wire Create Trip to local Drift persistence
+➡ Commit Create Trip local persistence
 
 
 ---

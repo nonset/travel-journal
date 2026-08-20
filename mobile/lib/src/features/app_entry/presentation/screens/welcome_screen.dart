@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../trip_management/domain/repositories/trip_repository.dart';
 import 'home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  const WelcomeScreen({required this.tripRepository, super.key});
+
+  final TripRepository tripRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +72,7 @@ class WelcomeScreen extends StatelessWidget {
     Navigator.of(context).pushReplacement(
       PageRouteBuilder<void>(
         pageBuilder: (context, animation, secondaryAnimation) {
-          return const HomeScreen();
+          return HomeScreen(tripRepository: tripRepository);
         },
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(opacity: animation, child: child);
