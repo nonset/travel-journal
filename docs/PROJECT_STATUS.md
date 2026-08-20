@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-███████████░░░░░░░░░░░░░ 32%
+████████████░░░░░░░░░░░░ 36%
 ```
 
 ---
@@ -56,9 +56,9 @@ Overall Progress
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
-| App Entry Screens | 5% | 🟡 In Progress | App entry feature folder exists; SCR-001 implementation is next |
+| App Entry Screens | 33% | 🟡 In Progress | SCR-001 Splash is implemented; SCR-002 and SCR-003 are next |
 | Core MVP Features | 0% | ⏳ Planned | Trip, expense, photo, note, and summary modules are not implemented yet |
-| Testing & QA | 15% | 🟡 In Progress | Scaffold and app shell pass `flutter analyze` and `flutter test` |
+| Testing & QA | 20% | 🟡 In Progress | Scaffold, app shell, and SCR-001 pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -71,7 +71,7 @@ Overall Progress
 | M3 | Documentation status aligned with reality | 100% | ✅ Completed |
 | M4 | Flutter project scaffold created in `mobile/` | 100% | ✅ Completed |
 | M5 | App theme and folder architecture ready | 100% | ✅ Completed |
-| M6 | SCR-001 Splash implemented and checked | 0% | ⏳ Planned |
+| M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 0% | ⏳ Planned |
 | M8 | SCR-003 Home implemented and checked | 0% | ⏳ Planned |
 | M9 | Trip Management MVP implemented | 0% | ⏳ Planned |
@@ -108,6 +108,10 @@ Today Progress
 | Create app theme | ✅ Completed | Added UI_BIBLE-based light/dark Material 3 theme |
 | Create folder architecture | ✅ Completed | Added `src/app`, `src/core`, and `src/features/app_entry` structure |
 | Verify app shell | ✅ Completed | `flutter analyze` and `flutter test` passed after architecture update |
+| Commit theme and folder architecture | ✅ Completed | Commit `0322412 Add app theme and feature structure` |
+| Push theme and folder architecture | ✅ Completed | Pushed theme checkpoint to `origin/main` |
+| Implement SCR-001 Splash | ✅ Completed | Added Splash screen with logo, app name, loading indicator, SafeArea, and fade animation |
+| Verify SCR-001 Splash | ✅ Completed | `flutter analyze` and `flutter test` passed after Splash implementation |
 
 ## Today's Remaining Checklist
 
@@ -118,8 +122,11 @@ Today Progress
 - [x] Commit Flutter scaffold
 - [x] Push Flutter scaffold to GitHub
 - [x] Create app theme and folder architecture
-- [ ] Commit theme and folder architecture
-- [ ] Start SCR-001 Splash implementation
+- [x] Commit theme and folder architecture
+- [x] Push theme and folder architecture to GitHub
+- [x] Start SCR-001 Splash implementation
+- [ ] Commit SCR-001 Splash implementation
+- [ ] Push SCR-001 Splash implementation to GitHub
 
 ---
 
@@ -213,7 +220,7 @@ Today Progress
 | Environment Ready | ✅ |
 | Documentation | 🟡 |
 | Flutter Project | ✅ |
-| SCR-001 Splash | ⏳ |
+| SCR-001 Splash | ✅ |
 | MVP Complete | ⏳ |
 | Taiwan Beta | ⏳ |
 | Public Release | ⏳ |
@@ -229,11 +236,11 @@ None
 
 # 💡 Next Action
 
-Commit the app theme and folder architecture.
+Commit SCR-001 Splash Screen implementation.
 
 After that,
 
-Implement SCR-001 Splash Screen.
+Start SCR-002 Welcome Screen.
 
 ---
 
@@ -245,7 +252,7 @@ Project Foundation
 
 Flutter project scaffold exists in `mobile/`.
 
-SCR-001 Splash has a draft spec and wireframe, but it is not implemented.
+SCR-001 Splash has been implemented and verified with analyze/test.
 
 Do not mark a screen as implemented until Flutter code exists and has been checked.
 
@@ -259,7 +266,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 |---------|------|:--------:|--------|
 | Sprint 0 | Project Setup | 100% | ✅ Completed |
 | Sprint 0.5 | Project Foundation | 90% | 🟡 In Progress |
-| Sprint 1 | App Entry | 0% | ⏳ Planned |
+| Sprint 1 | App Entry | 33% | 🟡 In Progress |
 | Sprint 2 | Trip Management | 0% | ⏳ Planned |
 | Sprint 3 | Expense Tracking | 0% | ⏳ Planned |
 | Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
@@ -268,7 +275,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 
 | Screen ID | Screen | Spec | Implementation |
 |-----------|--------|------|----------------|
-| SCR-001 | Splash | 🟡 Draft | ⏳ Not Started |
+| SCR-001 | Splash | 🟢 Approved | 🚀 Implemented |
 | SCR-002 | Welcome | ⬜ Not Started | ⏳ Not Started |
 | SCR-003 | Home | ⬜ Not Started | ⏳ Not Started |
 
@@ -279,11 +286,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Theme and folder architecture checkpoint
+🟡 SCR-001 Splash checkpoint
 
 Next
 
-➡ Implement SCR-001 Splash Screen
+➡ Commit SCR-001 Splash implementation
 
 
 ---

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../core/constants/app_strings.dart';
 import '../core/theme/app_theme.dart';
-import '../features/app_entry/presentation/app_entry_placeholder_screen.dart';
+import '../features/app_entry/presentation/screens/splash_screen.dart';
 
 class TravelJournalApp extends StatelessWidget {
   const TravelJournalApp({super.key});
@@ -15,7 +15,7 @@ class TravelJournalApp extends StatelessWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
-      home: const AppEntryPlaceholderScreen(),
+      home: const SplashScreen(),
     );
   }
 }

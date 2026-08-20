@@ -68,7 +68,7 @@ Owner: Product Team
 
 | No | Screen | ID | Priority | Status |
 |----|--------|-----|----------|--------|
-| 1 | Splash Screen | SCR-001 | High | ⬜ |
+| 1 | Splash Screen | SCR-001 | High | 🚀 |
 | 2 | Welcome Screen | SCR-002 | High | ⬜ |
 | 3 | Home Screen | SCR-003 | High | ⬜ |
 | 4 | Create Trip | SCR-004 | High | ⬜ |
@@ -285,7 +285,7 @@ Screen ID : SCR-001
 
 Priority : High
 
-Status : 🟡 Draft
+Status : 🚀 Implemented
 
 ---
 
