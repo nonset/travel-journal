@@ -112,6 +112,8 @@ Today Progress
 | Push theme and folder architecture | ✅ Completed | Pushed theme checkpoint to `origin/main` |
 | Implement SCR-001 Splash | ✅ Completed | Added Splash screen with logo, app name, loading indicator, SafeArea, and fade animation |
 | Verify SCR-001 Splash | ✅ Completed | `flutter analyze` and `flutter test` passed after Splash implementation |
+| Commit SCR-001 Splash | ✅ Completed | Commit `fe13caa Implement SCR-001 splash screen` |
+| Push SCR-001 Splash | ✅ Completed | Pushed SCR-001 checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -125,8 +127,8 @@ Today Progress
 - [x] Commit theme and folder architecture
 - [x] Push theme and folder architecture to GitHub
 - [x] Start SCR-001 Splash implementation
-- [ ] Commit SCR-001 Splash implementation
-- [ ] Push SCR-001 Splash implementation to GitHub
+- [x] Commit SCR-001 Splash implementation
+- [x] Push SCR-001 Splash implementation to GitHub
 
 ---
 
@@ -236,10 +238,6 @@ None
 
 # 💡 Next Action
 
-Commit SCR-001 Splash Screen implementation.
-
-After that,
-
 Start SCR-002 Welcome Screen.
 
 ---
@@ -286,11 +284,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-001 Splash checkpoint
+🟡 SCR-002 Welcome planning
 
 Next
 
-➡ Commit SCR-001 Splash implementation
+➡ Implement SCR-002 Welcome Screen
 
 
 ---
