@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-█████████████░░░░░░░░░░░ 40%
+██████████████░░░░░░░░░░ 42%
 ```
 
 ---
@@ -58,7 +58,7 @@ Overall Progress
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 66% | 🟡 In Progress | SCR-001 Splash and SCR-002 Welcome are implemented; SCR-003 Home is next |
 | Core MVP Features | 0% | ⏳ Planned | Trip, expense, photo, note, and summary modules are not implemented yet |
-| Testing & QA | 25% | 🟡 In Progress | Scaffold, app shell, SCR-001, and SCR-002 pass `flutter analyze` and `flutter test` |
+| Testing & QA | 28% | 🟡 In Progress | Scaffold, app shell, SCR-001, and SCR-002 pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -116,6 +116,8 @@ Today Progress
 | Push SCR-001 Splash | ✅ Completed | Pushed SCR-001 checkpoint to `origin/main` |
 | Implement SCR-002 Welcome | ✅ Completed | Added Welcome screen and Splash-to-Welcome transition |
 | Verify SCR-002 Welcome | ✅ Completed | `flutter analyze` and `flutter test` passed after Welcome implementation |
+| Commit SCR-002 Welcome | ✅ Completed | Commit `7b05494 Implement SCR-002 welcome screen` |
+| Push SCR-002 Welcome | ✅ Completed | Pushed SCR-002 checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -132,8 +134,9 @@ Today Progress
 - [x] Commit SCR-001 Splash implementation
 - [x] Push SCR-001 Splash implementation to GitHub
 - [x] Start SCR-002 Welcome implementation
-- [ ] Commit SCR-002 Welcome implementation
-- [ ] Push SCR-002 Welcome implementation to GitHub
+- [x] Commit SCR-002 Welcome implementation
+- [x] Push SCR-002 Welcome implementation to GitHub
+- [ ] Start SCR-003 Home implementation
 
 ---
 
@@ -244,10 +247,6 @@ None
 
 # 💡 Next Action
 
-Commit SCR-002 Welcome Screen implementation.
-
-After that,
-
 Start SCR-003 Home Screen.
 
 ---
@@ -294,11 +293,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-002 Welcome checkpoint
+🟡 SCR-003 Home planning
 
 Next
 
-➡ Commit SCR-002 Welcome implementation
+➡ Implement SCR-003 Home Screen
 
 
 ---
