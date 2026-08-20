@@ -33,6 +33,9 @@ Persist trip records locally so users can create and reopen travel journals with
 | Domain model | `mobile/lib/src/features/trip_management/domain/models/trip.dart` | Implemented |
 | Repository contract | `mobile/lib/src/features/trip_management/domain/repositories/trip_repository.dart` | Implemented |
 | Temporary repository | `mobile/lib/src/features/trip_management/data/repositories/in_memory_trip_repository.dart` | Implemented |
+| Drift database | `mobile/lib/src/core/database/app_database.dart` | Implemented |
+| Trips table | `mobile/lib/src/features/trip_management/data/database/trips_table.dart` | Implemented |
+| Drift repository | `mobile/lib/src/features/trip_management/data/repositories/drift_trip_repository.dart` | Implemented |
 
 ### Trip Repository Contract
 
@@ -103,7 +106,7 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Add Drift dependencies, define the initial trips table, and replace the temporary in-memory repository with a Drift-backed repository adapter.
+Wire the Create Trip flow to `DriftTripRepository` so created trips are saved locally before opening the Trip Dashboard.
 
 ### Initial Drift Scope
 
@@ -111,7 +114,7 @@ The first storage implementation should cover only Trip records.
 
 | Table | Purpose | Status |
 |------|---------|--------|
-| `trips` | Store Trip records | Planned |
+| `trips` | Store Trip records | Implemented |
 
 Initial `trips` columns:
 
@@ -135,3 +138,14 @@ Initial indexes:
 - `status`
 
 Do not implement Expense, Photo, Emotion, Daily Note, or Trip Summary tables until their feature screens are ready.
+
+### Drift Dependencies
+
+Implemented packages:
+
+- `drift`
+- `sqlite3_flutter_libs`
+- `path_provider`
+- `path`
+- `drift_dev`
+- `build_runner`

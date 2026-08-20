@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-███████████████████░░░░░ 60%
+████████████████████░░░░ 64%
 ```
 
 ---
@@ -57,8 +57,8 @@ Overall Progress
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 20% | 🟡 In Progress | Trip model, repository foundation, and Drift/SQLite storage decision are complete |
-| Testing & QA | 44% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, and Trip repository pass `flutter analyze` and `flutter test` |
+| Core MVP Features | 25% | 🟡 In Progress | Drift dependencies, initial trips table, and Drift-backed Trip repository are implemented |
+| Testing & QA | 48% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, and in-memory/Drift repositories pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -74,7 +74,7 @@ Overall Progress
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
-| M9 | Trip Management MVP implemented | 45% | 🟡 In Progress |
+| M9 | Trip Management MVP implemented | 55% | 🟡 In Progress |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
@@ -138,6 +138,10 @@ Today Progress
 | Choose permanent local storage adapter | ✅ Completed | Selected Drift on SQLite for typed offline-first Trip persistence |
 | Commit storage adapter decision | ✅ Completed | Commit `cb52fda Choose Drift for local trip storage` |
 | Push storage adapter decision | ✅ Completed | Pushed Drift/SQLite decision checkpoint to `origin/main` |
+| Add Drift dependencies | ✅ Completed | Added Drift, SQLite runtime libs, path utilities, drift_dev, and build_runner |
+| Add initial trips table | ✅ Completed | Added Drift `trips` table with Trip fields and country/start date/status indexes |
+| Implement Drift Trip repository | ✅ Completed | Added `DriftTripRepository` backed by `AppDatabase` |
+| Verify Drift Trip storage | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 14 tests |
 
 ## Today's Remaining Checklist
 
@@ -171,7 +175,9 @@ Today Progress
 - [x] Choose permanent local storage adapter
 - [x] Commit storage adapter decision
 - [x] Push storage adapter decision to GitHub
-- [ ] Add Drift dependencies and initial trips table
+- [x] Add Drift dependencies and initial trips table
+- [ ] Commit Drift setup and initial trips table
+- [ ] Push Drift setup and initial trips table to GitHub
 
 ---
 
@@ -282,7 +288,11 @@ None
 
 # 💡 Next Action
 
-Add Drift dependencies and initial `trips` table.
+Commit Drift setup and initial `trips` table.
+
+After that,
+
+Wire Create Trip to local Drift persistence.
 
 ---
 
@@ -328,11 +338,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Trip Management Drift setup planning
+🟡 Trip Management Drift setup checkpoint
 
 Next
 
-➡ Add Drift dependencies and initial `trips` table
+➡ Commit Drift setup and initial `trips` table
 
 
 ---

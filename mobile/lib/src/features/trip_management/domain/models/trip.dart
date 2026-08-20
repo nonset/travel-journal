@@ -83,4 +83,40 @@ class Trip {
       lastSyncedAt: lastSyncedAt ?? this.lastSyncedAt,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is Trip &&
+            id == other.id &&
+            title == other.title &&
+            country == other.country &&
+            startDate == other.startDate &&
+            endDate == other.endDate &&
+            coverPhotoId == other.coverPhotoId &&
+            status == other.status &&
+            createdAt == other.createdAt &&
+            updatedAt == other.updatedAt &&
+            deletedAt == other.deletedAt &&
+            syncStatus == other.syncStatus &&
+            lastSyncedAt == other.lastSyncedAt;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      id,
+      title,
+      country,
+      startDate,
+      endDate,
+      coverPhotoId,
+      status,
+      createdAt,
+      updatedAt,
+      deletedAt,
+      syncStatus,
+      lastSyncedAt,
+    );
+  }
 }
