@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-█████████████████░░░░░░░ 54%
+██████████████████░░░░░░ 58%
 ```
 
 ---
@@ -57,8 +57,8 @@ Overall Progress
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 14% | 🟡 In Progress | Create Trip and Trip Dashboard screens are implemented; persistence is next |
-| Testing & QA | 40% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005 pass `flutter analyze` and `flutter test` |
+| Core MVP Features | 18% | 🟡 In Progress | Trip model and repository foundation are implemented; permanent storage adapter is next |
+| Testing & QA | 44% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, and Trip repository pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -74,7 +74,7 @@ Overall Progress
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
-| M9 | Trip Management MVP implemented | 30% | 🟡 In Progress |
+| M9 | Trip Management MVP implemented | 40% | 🟡 In Progress |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
@@ -130,6 +130,9 @@ Today Progress
 | Verify SCR-005 Trip Dashboard | ✅ Completed | `flutter analyze` and `flutter test` passed after Trip Dashboard implementation |
 | Commit SCR-005 Trip Dashboard | ✅ Completed | Commit `8bcca88 Implement SCR-005 trip dashboard screen` |
 | Push SCR-005 Trip Dashboard | ✅ Completed | Pushed SCR-005 checkpoint to `origin/main` |
+| Plan Trip Management persistence | ✅ Completed | Updated `SERVICE_SPEC.md` with Trip repository responsibilities, local storage flow, storage options, and persistence rules |
+| Implement Trip domain foundation | ✅ Completed | Added `Trip`, `TripStatus`, `SyncStatus`, `TripRepository`, and temporary `InMemoryTripRepository` |
+| Verify Trip persistence foundation | ✅ Completed | `flutter analyze` and `flutter test` passed with 11 tests |
 
 ## Today's Remaining Checklist
 
@@ -157,7 +160,9 @@ Today Progress
 - [x] Start SCR-005 Trip Dashboard implementation
 - [x] Commit SCR-005 Trip Dashboard implementation
 - [x] Push SCR-005 Trip Dashboard implementation to GitHub
-- [ ] Start Trip Management persistence planning
+- [x] Start Trip Management persistence planning
+- [ ] Commit Trip Management persistence foundation
+- [ ] Push Trip Management persistence foundation to GitHub
 
 ---
 
@@ -201,7 +206,7 @@ Today Progress
 - [ ] ROADMAP.md
 - [ ] DEVLOG.md
 - [ ] API.md
-- [ ] SERVICE_SPEC.md
+- [x] SERVICE_SPEC.md
 - [ ] COMPONENT_SPEC.md
 
 ---
@@ -268,7 +273,11 @@ None
 
 # 💡 Next Action
 
-Start persistence planning for Trip Management.
+Commit Trip Management persistence foundation.
+
+After that,
+
+Choose permanent local storage adapter for Trip Management.
 
 ---
 
@@ -314,11 +323,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Trip Management persistence planning
+🟡 Trip Management persistence checkpoint
 
 Next
 
-➡ Plan local Trip model, repository, and storage flow
+➡ Commit Trip Management persistence foundation
 
 
 ---
