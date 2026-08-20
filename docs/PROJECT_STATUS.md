@@ -41,8 +41,75 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-███████░░░░░░░░░░░░░░░░░ 20%
+████████░░░░░░░░░░░░░░░░ 22%
 ```
+
+---
+
+# 🧭 Project Dashboard
+
+## Overall Project Progress
+
+| Area | Progress | Status | Notes |
+|------|:--------:|--------|-------|
+| Environment Setup | 100% | ✅ Completed | Git, Flutter, Android Studio, Android SDK are ready |
+| Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
+| Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
+| Flutter Scaffold | 0% | ⏳ Planned | Flutter project has not been created in `mobile/` yet |
+| App Entry Screens | 0% | ⏳ Planned | SCR-001 to SCR-003 are not implemented yet |
+| Core MVP Features | 0% | ⏳ Planned | Trip, expense, photo, note, and summary modules are not implemented yet |
+| Testing & QA | 0% | ⏳ Planned | No app code exists yet, so no test suite exists yet |
+| Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
+
+## Project Milestone Checklist
+
+| Milestone | Checklist | Progress | Status |
+|-----------|-----------|:--------:|--------|
+| M0 | Development environment ready | 100% | ✅ Completed |
+| M1 | Git repository and GitHub ready | 100% | ✅ Completed |
+| M2 | Core product documentation drafted | 85% | 🟡 In Progress |
+| M3 | Documentation status aligned with reality | 100% | ✅ Completed |
+| M4 | Flutter project scaffold created in `mobile/` | 0% | ⏳ Planned |
+| M5 | App theme and folder architecture ready | 0% | ⏳ Planned |
+| M6 | SCR-001 Splash implemented and checked | 0% | ⏳ Planned |
+| M7 | SCR-002 Welcome implemented and checked | 0% | ⏳ Planned |
+| M8 | SCR-003 Home implemented and checked | 0% | ⏳ Planned |
+| M9 | Trip Management MVP implemented | 0% | ⏳ Planned |
+| M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
+| M11 | Journal modules implemented | 0% | ⏳ Planned |
+| M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
+| M13 | Taiwan Beta build ready | 0% | ⏳ Planned |
+
+## Today's Progress
+
+Date: 2026-08-20
+
+```
+Today Progress
+
+██████████████████░░░░░░ 75%
+```
+
+| Task | Status | Result |
+|------|--------|--------|
+| Locate real project folder | ✅ Completed | Found project at `C:\Projects\travel-journal` |
+| Check Git status | ✅ Completed | Branch `main` is clean locally after checkpoint, ahead `origin/main` by 1 commit |
+| Audit project structure | ✅ Completed | Confirmed repo is documentation-first; app folders are still empty |
+| Audit documentation status | ✅ Completed | Found core docs exist, but status needed alignment |
+| Align project status | ✅ Completed | Updated status so SCR-001 is draft, not implemented |
+| Restore placeholder docs | ✅ Completed | Added placeholders for API, component, service, and devlog docs |
+| Create checkpoint commit | ✅ Completed | Commit `8140fbd Align project status before Flutter scaffold` |
+| Add milestone checklist | ✅ Completed | Added this project dashboard and today's progress section |
+| Push checkpoint to GitHub | ⏳ Pending | Not pushed yet |
+| Create Flutter scaffold | ⏳ Pending | Next major task |
+
+## Today's Remaining Checklist
+
+- [ ] Review this milestone/progress dashboard
+- [ ] Push local commit to GitHub when approved
+- [ ] Create Flutter project scaffold in `mobile/`
+- [ ] Re-check Git status after scaffold
+- [ ] Start SCR-001 Splash implementation
 
 ---
 
