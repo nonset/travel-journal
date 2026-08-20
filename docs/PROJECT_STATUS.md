@@ -57,8 +57,8 @@ Overall Progress
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 34% | 🟡 In Progress | Home now reads locally saved trips from TripRepository |
-| Testing & QA | 52% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, and Home saved trips pass `flutter analyze` and `flutter test` |
+| Core MVP Features | 35% | 🟡 In Progress | Home can reopen saved trips into Trip Dashboard |
+| Testing & QA | 53% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, Home saved trips, and saved trip dashboard reopen pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -74,7 +74,7 @@ Overall Progress
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
-| M9 | Trip Management MVP implemented | 72% | 🟡 In Progress |
+| M9 | Trip Management MVP implemented | 74% | 🟡 In Progress |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
@@ -152,6 +152,8 @@ Today Progress
 | Verify Home saved trips | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 15 tests |
 | Commit Home saved trips | ✅ Completed | Commit `d31db86 Show saved trips on Home` |
 | Push Home saved trips | ✅ Completed | Pushed Home saved trips checkpoint to `origin/main` |
+| Verify saved trip dashboard reopen | ✅ Completed | Home saved trip cards now have widget coverage for opening Trip Dashboard with persisted trip data |
+| Verify saved trip dashboard reopen tests | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 15 tests |
 
 ## Today's Remaining Checklist
 
@@ -194,7 +196,9 @@ Today Progress
 - [x] Show locally saved trips on Home
 - [x] Commit Home saved trips
 - [x] Push Home saved trips to GitHub
-- [ ] Verify saved trip cards reopen persisted Trip Dashboard data
+- [x] Verify saved trip cards reopen persisted Trip Dashboard data
+- [ ] Commit saved trip dashboard reopen verification
+- [ ] Push saved trip dashboard reopen verification to GitHub
 
 ---
 
@@ -305,7 +309,11 @@ None
 
 # 💡 Next Action
 
-Verify saved trip cards reopen persisted Trip Dashboard data.
+Commit saved trip dashboard reopen verification.
+
+After that,
+
+Plan SCR-006 Expense foundation.
 
 ---
 
@@ -351,11 +359,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Saved trip dashboard reopen verification
+🟡 Saved trip dashboard reopen checkpoint
 
 Next
 
-➡ Verify saved trip cards reopen persisted Trip Dashboard data
+➡ Commit saved trip dashboard reopen verification
 
 
 ---

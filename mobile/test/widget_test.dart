@@ -117,7 +117,9 @@ void main() {
     expect(trips.single.country, 'Taiwan');
   });
 
-  testWidgets('shows locally saved trips on home', (WidgetTester tester) async {
+  testWidgets('opens locally saved trips from home', (
+    WidgetTester tester,
+  ) async {
     final repository = InMemoryTripRepository(
       initialTrips: [
         Trip.create(
@@ -144,6 +146,15 @@ void main() {
     expect(find.text('Taiwan Beta Trip 2026'), findsOneWidget);
     expect(find.textContaining('Taiwan - 2026-10-05'), findsOneWidget);
     expect(find.text(AppStrings.homeTripStatus), findsOneWidget);
+
+    await tester.tap(find.text('Taiwan Beta Trip 2026'));
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.tripDashboardTitle), findsOneWidget);
+    expect(find.text('Taiwan Beta Trip 2026'), findsOneWidget);
+    expect(find.text('Taiwan'), findsOneWidget);
+    expect(find.text('2026-10-05 - 2026-10-08'), findsOneWidget);
+    expect(find.text(AppStrings.tripDashboardQuickActions), findsOneWidget);
   });
 }
 

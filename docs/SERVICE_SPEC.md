@@ -108,7 +108,7 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Verify saved trip cards on Home reopen persisted Trip Dashboard data.
+Plan SCR-006 Expense foundation.
 
 ### Initial Drift Scope
 
