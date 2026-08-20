@@ -66,19 +66,29 @@ Trip Dashboard
 
 ### Storage Engine Decision
 
-The project has not selected a permanent local storage package yet.
+Decision: Use Drift on top of SQLite for the permanent local storage adapter.
 
-Recommended next decision:
+Decision date: 2026-08-20
+
+Reason:
+
+- Travel Journal is offline-first.
+- The data model has clear relationships from Trip to Expense, Photo, Emotion, Daily Note, and Trip Summary.
+- The database design already defines indexes by trip, country, date, status, category, and memory type.
+- Drift provides typed database access while keeping SQLite's reliable local persistence.
+- SQLite is a better fit than key-value storage for queryable travel records and future summaries.
+
+Options considered:
 
 | Option | Best For | Notes |
 |--------|----------|-------|
-| SQLite / Drift | Structured offline data with relationships | Strong fit for Trip, Expense, Photo, Emotion, Daily Note |
-| Isar | Fast local object storage | Good developer experience, but adds a larger storage decision |
-| SharedPreferences | Small settings only | Not appropriate for the main travel data model |
+| Drift / SQLite | Structured offline data with relationships | Selected for MVP |
+| Isar | Fast local object storage | Deferred because the product data is relational and index-heavy |
+| SharedPreferences | Small settings only | Rejected for core travel data |
 
-Recommended direction for MVP:
+MVP storage direction:
 
-Use SQLite or Drift for structured offline-first records, because the database design already has relationships and indexes.
+Use Drift for typed data access, SQLite persistence, migrations, and local-first repository adapters.
 
 ### Persistence Rules
 
@@ -93,4 +103,35 @@ Use SQLite or Drift for structured offline-first records, because the database d
 
 ### Next Implementation Step
 
-Choose the local storage engine, then replace the temporary in-memory repository with a persistent repository adapter.
+Add Drift dependencies, define the initial trips table, and replace the temporary in-memory repository with a Drift-backed repository adapter.
+
+### Initial Drift Scope
+
+The first storage implementation should cover only Trip records.
+
+| Table | Purpose | Status |
+|------|---------|--------|
+| `trips` | Store Trip records | Planned |
+
+Initial `trips` columns:
+
+- `id`
+- `title`
+- `country`
+- `start_date`
+- `end_date`
+- `cover_photo_id`
+- `status`
+- `created_at`
+- `updated_at`
+- `deleted_at`
+- `sync_status`
+- `last_synced_at`
+
+Initial indexes:
+
+- `country`
+- `start_date`
+- `status`
+
+Do not implement Expense, Photo, Emotion, Daily Note, or Trip Summary tables until their feature screens are ready.

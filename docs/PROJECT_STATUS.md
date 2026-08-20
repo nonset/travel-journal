@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-██████████████████░░░░░░ 58%
+███████████████████░░░░░ 60%
 ```
 
 ---
@@ -57,7 +57,7 @@ Overall Progress
 | Product Documentation | 85% | 🟡 In Progress | Core product, flow, screen, database, and UI docs exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 18% | 🟡 In Progress | Trip model and repository foundation are implemented; permanent storage adapter is next |
+| Core MVP Features | 20% | 🟡 In Progress | Trip model, repository foundation, and Drift/SQLite storage decision are complete |
 | Testing & QA | 44% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, and Trip repository pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
@@ -74,7 +74,7 @@ Overall Progress
 | M6 | SCR-001 Splash implemented and checked | 100% | ✅ Completed |
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
-| M9 | Trip Management MVP implemented | 40% | 🟡 In Progress |
+| M9 | Trip Management MVP implemented | 45% | 🟡 In Progress |
 | M10 | Expense Tracking MVP implemented | 0% | ⏳ Planned |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
@@ -135,6 +135,7 @@ Today Progress
 | Verify Trip persistence foundation | ✅ Completed | `flutter analyze` and `flutter test` passed with 11 tests |
 | Commit Trip persistence foundation | ✅ Completed | Commit `e250fff Add trip persistence foundation` |
 | Push Trip persistence foundation | ✅ Completed | Pushed Trip persistence foundation checkpoint to `origin/main` |
+| Choose permanent local storage adapter | ✅ Completed | Selected Drift on SQLite for typed offline-first Trip persistence |
 
 ## Today's Remaining Checklist
 
@@ -165,7 +166,9 @@ Today Progress
 - [x] Start Trip Management persistence planning
 - [x] Commit Trip Management persistence foundation
 - [x] Push Trip Management persistence foundation to GitHub
-- [ ] Choose permanent local storage adapter
+- [x] Choose permanent local storage adapter
+- [ ] Commit storage adapter decision
+- [ ] Push storage adapter decision to GitHub
 
 ---
 
@@ -276,7 +279,11 @@ None
 
 # 💡 Next Action
 
-Choose permanent local storage adapter for Trip Management.
+Commit storage adapter decision.
+
+After that,
+
+Add Drift dependencies and initial `trips` table.
 
 ---
 
@@ -322,11 +329,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Trip Management storage adapter decision
+🟡 Trip Management storage adapter decision checkpoint
 
 Next
 
-➡ Choose SQLite/Drift or another local storage adapter
+➡ Commit Drift/SQLite storage adapter decision
 
 
 ---
