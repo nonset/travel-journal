@@ -161,6 +161,8 @@ Today Progress
 | Push SCR-006 Expense foundation plan | ✅ Completed | Pushed SCR-006 Expense foundation plan to `origin/main` |
 | End-of-day project review | ✅ Completed | Reviewed Git status, recent checkpoints, milestone progress, and next action for tomorrow |
 | End-of-day Git status check | ✅ Completed | Working tree is clean on `main...origin/main` |
+| Commit end-of-day project review | ✅ Completed | Commit `b5e9e08 Add end-of-day project review` |
+| Push end-of-day project review | ✅ Completed | Pushed end-of-day review checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -211,6 +213,8 @@ Today Progress
 - [x] Push SCR-006 Expense foundation plan to GitHub
 - [x] End-of-day project review
 - [x] Confirm Git is clean and synced with GitHub
+- [x] Commit end-of-day project review
+- [x] Push end-of-day project review to GitHub
 - [ ] Implement SCR-006 Expense domain foundation
 
 ---
