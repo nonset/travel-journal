@@ -2,13 +2,28 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../trip_management/domain/models/trip.dart';
 import '../../../trip_management/domain/repositories/trip_repository.dart';
 import '../../../trip_management/presentation/screens/create_trip_screen.dart';
+import '../../../trip_management/presentation/screens/trip_dashboard_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({required this.tripRepository, super.key});
 
   final TripRepository tripRepository;
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late Future<List<Trip>> _tripsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _tripsFuture = widget.tripRepository.getTrips();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +73,34 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: AppSpacing.xl),
             Text(AppStrings.homeRecentTrips, style: textTheme.titleLarge),
             const SizedBox(height: AppSpacing.md),
-            _RecentTripsPlaceholder(
-              colorScheme: colorScheme,
-              textTheme: textTheme,
+            FutureBuilder<List<Trip>>(
+              future: _tripsFuture,
+              builder: (context, snapshot) {
+                final trips = snapshot.data ?? const <Trip>[];
+                if (snapshot.connectionState != ConnectionState.done) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                if (trips.isEmpty) {
+                  return _RecentTripsPlaceholder(
+                    colorScheme: colorScheme,
+                    textTheme: textTheme,
+                  );
+                }
+
+                return Column(
+                  children: [
+                    for (final trip in trips)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                        child: _TripListCard(
+                          trip: trip,
+                          onOpenTrip: () => _openTripDashboard(context, trip),
+                        ),
+                      ),
+                  ],
+                );
+              },
             ),
           ],
         ),
@@ -68,10 +108,34 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void _openCreateTrip(BuildContext context) {
+  Future<void> _openCreateTrip(BuildContext context) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (context) =>
+            CreateTripScreen(tripRepository: widget.tripRepository),
+      ),
+    );
+
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _tripsFuture = widget.tripRepository.getTrips();
+    });
+  }
+
+  void _openTripDashboard(BuildContext context, Trip trip) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (context) => CreateTripScreen(tripRepository: tripRepository),
+        builder: (context) {
+          return TripDashboardScreen(
+            tripName: trip.title,
+            country: trip.country,
+            startDate: trip.startDate,
+            endDate: trip.endDate,
+          );
+        },
       ),
     );
   }
@@ -223,5 +287,74 @@ class _RecentTripsPlaceholder extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class _TripListCard extends StatelessWidget {
+  const _TripListCard({required this.trip, required this.onOpenTrip});
+
+  final Trip trip;
+  final VoidCallback onOpenTrip;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+
+    return Card(
+      child: InkWell(
+        onTap: onOpenTrip,
+        borderRadius: BorderRadius.circular(16),
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          child: Row(
+            children: [
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: colorScheme.primaryContainer,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  child: Icon(
+                    Icons.luggage_rounded,
+                    color: colorScheme.primary,
+                  ),
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(trip.title, style: textTheme.titleLarge),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      '${trip.country} - ${_formatDate(trip.startDate)} - ${_formatDate(trip.endDate)}',
+                      style: textTheme.bodyMedium,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Text(
+                AppStrings.homeTripStatus,
+                style: textTheme.labelSmall?.copyWith(
+                  color: colorScheme.primary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  String _formatDate(DateTime date) {
+    final month = date.month.toString().padLeft(2, '0');
+    final day = date.day.toString().padLeft(2, '0');
+
+    return '${date.year}-$month-$day';
   }
 }

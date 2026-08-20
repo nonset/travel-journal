@@ -26,6 +26,7 @@ class AppStrings {
   static const homeActionMood = 'Mood';
   static const homeActionNote = 'Note';
   static const homeRecentTrips = 'Recent trips';
+  static const homeTripStatus = 'Active';
   static const createTripTitle = 'Create Trip';
   static const createTripSubtitle =
       'Open a fresh journal for your next memory.';

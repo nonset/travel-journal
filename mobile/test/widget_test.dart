@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_journal/src/app/travel_journal_app.dart';
 import 'package:travel_journal/src/core/constants/app_strings.dart';
 import 'package:travel_journal/src/features/trip_management/data/repositories/in_memory_trip_repository.dart';
+import 'package:travel_journal/src/features/trip_management/domain/models/trip.dart';
 
 void main() {
   testWidgets('shows splash screen before welcome', (
@@ -114,6 +115,35 @@ void main() {
     expect(trips, hasLength(1));
     expect(trips.single.title, 'Taiwan Beta Trip 2026');
     expect(trips.single.country, 'Taiwan');
+  });
+
+  testWidgets('shows locally saved trips on home', (WidgetTester tester) async {
+    final repository = InMemoryTripRepository(
+      initialTrips: [
+        Trip.create(
+          id: 'trip-1',
+          title: 'Taiwan Beta Trip 2026',
+          country: 'Taiwan',
+          startDate: DateTime(2026, 10, 5),
+          endDate: DateTime(2026, 10, 8),
+          createdAt: DateTime(2026, 8, 20),
+        ),
+      ],
+    );
+
+    await tester.pumpWidget(TravelJournalApp(tripRepository: repository));
+    await tester.pump(const Duration(milliseconds: 1300));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.welcomePrimaryAction));
+    await tester.pumpAndSettle();
+
+    await tester.drag(find.byType(Scrollable), const Offset(0, -600));
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.homeRecentTrips), findsOneWidget);
+    expect(find.text('Taiwan Beta Trip 2026'), findsOneWidget);
+    expect(find.textContaining('Taiwan - 2026-10-05'), findsOneWidget);
+    expect(find.text(AppStrings.homeTripStatus), findsOneWidget);
   });
 }
 

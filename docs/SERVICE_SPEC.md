@@ -37,6 +37,7 @@ Persist trip records locally so users can create and reopen travel journals with
 | Trips table | `mobile/lib/src/features/trip_management/data/database/trips_table.dart` | Implemented |
 | Drift repository | `mobile/lib/src/features/trip_management/data/repositories/drift_trip_repository.dart` | Implemented |
 | Create Trip save flow | `mobile/lib/src/features/trip_management/presentation/screens/create_trip_screen.dart` | Implemented |
+| Home saved trips read flow | `mobile/lib/src/features/app_entry/presentation/screens/home_screen.dart` | Implemented |
 
 ### Trip Repository Contract
 
@@ -107,7 +108,7 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Show locally saved trips on the Home screen by reading from `TripRepository.getTrips()`.
+Wire saved trip cards on Home to reopen persisted Trip Dashboard data.
 
 ### Initial Drift Scope
 
