@@ -165,6 +165,8 @@ Today Progress
 | Push end-of-day project review | ✅ Completed | Pushed end-of-day review checkpoint to `origin/main` |
 | Implement SCR-006 Expense domain foundation | ✅ Completed | Added Expense model, category/payment enums, repository contract, and in-memory repository |
 | Verify SCR-006 Expense domain foundation | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 24 tests |
+| Commit SCR-006 Expense domain foundation | ✅ Completed | Commit `2b63de5 Add expense domain foundation` |
+| Push SCR-006 Expense domain foundation | ✅ Completed | Pushed SCR-006 Expense domain foundation checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -218,8 +220,9 @@ Today Progress
 - [x] Commit end-of-day project review
 - [x] Push end-of-day project review to GitHub
 - [x] Implement SCR-006 Expense domain foundation
-- [ ] Commit SCR-006 Expense domain foundation
-- [ ] Push SCR-006 Expense domain foundation to GitHub
+- [x] Commit SCR-006 Expense domain foundation
+- [x] Push SCR-006 Expense domain foundation to GitHub
+- [ ] Start SCR-006 Add Expense screen skeleton
 
 ---
 
@@ -330,10 +333,6 @@ None
 
 # 💡 Next Action
 
-Commit SCR-006 Expense domain foundation.
-
-After that,
-
 Start SCR-006 Add Expense screen skeleton.
 
 ---
@@ -380,11 +379,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Expense domain foundation checkpoint
+🟡 SCR-006 Add Expense screen skeleton
 
 Next
 
-➡ Commit SCR-006 Expense domain foundation
+➡ Start SCR-006 Add Expense screen skeleton
 
 
 ---
