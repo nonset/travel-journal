@@ -170,6 +170,8 @@ Today Progress
 | Start SCR-006 Add Expense screen skeleton | ✅ Completed | Added Add Expense screen with amount, category, payment method, currency, date, note, and save placeholder |
 | Wire Trip Dashboard Add Expense entry | ✅ Completed | Trip Dashboard `Add Expense` action now opens the Add Expense screen skeleton |
 | Verify Add Expense screen skeleton | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 25 tests |
+| Commit SCR-006 Add Expense screen skeleton | ✅ Completed | Commit `d118a3a Add expense screen skeleton` |
+| Push SCR-006 Add Expense screen skeleton | ✅ Completed | Pushed SCR-006 Add Expense screen skeleton checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -226,8 +228,9 @@ Today Progress
 - [x] Commit SCR-006 Expense domain foundation
 - [x] Push SCR-006 Expense domain foundation to GitHub
 - [x] Start SCR-006 Add Expense screen skeleton
-- [ ] Commit SCR-006 Add Expense screen skeleton
-- [ ] Push SCR-006 Add Expense screen skeleton to GitHub
+- [x] Commit SCR-006 Add Expense screen skeleton
+- [x] Push SCR-006 Add Expense screen skeleton to GitHub
+- [ ] Wire Add Expense save flow to ExpenseRepository
 
 ---
 
@@ -338,10 +341,6 @@ None
 
 # 💡 Next Action
 
-Commit SCR-006 Add Expense screen skeleton.
-
-After that,
-
 Wire Add Expense save flow to ExpenseRepository.
 
 ---
@@ -388,11 +387,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Add Expense screen skeleton checkpoint
+🟡 SCR-006 Add Expense save flow
 
 Next
 
-➡ Commit SCR-006 Add Expense screen skeleton
+➡ Wire Add Expense save flow to ExpenseRepository
 
 
 ---
