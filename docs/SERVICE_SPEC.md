@@ -108,7 +108,7 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Implement SCR-006 Expense domain foundation.
+Commit SCR-006 Expense domain foundation.
 
 ### Initial Drift Scope
 
@@ -145,7 +145,7 @@ Do not implement Expense, Photo, Emotion, Daily Note, or Trip Summary tables unt
 
 ## SCR-006 Expense Foundation Plan
 
-Status: Planned
+Status: Implemented
 
 ### Goal
 
@@ -161,6 +161,16 @@ The first implementation should cover the minimum reliable Expense foundation:
 - `ExpenseRepository` contract
 - Temporary `InMemoryExpenseRepository`
 - Unit tests for validation, save/read, update, and soft delete behavior
+
+### Current Code Foundation
+
+| Layer | File | Status |
+|------|------|--------|
+| Domain model | `mobile/lib/src/features/expense_tracking/domain/models/expense.dart` | Implemented |
+| Repository contract | `mobile/lib/src/features/expense_tracking/domain/repositories/expense_repository.dart` | Implemented |
+| Temporary repository | `mobile/lib/src/features/expense_tracking/data/repositories/in_memory_expense_repository.dart` | Implemented |
+| Domain tests | `mobile/test/features/expense_tracking/domain/expense_test.dart` | Implemented |
+| Repository tests | `mobile/test/features/expense_tracking/data/in_memory_expense_repository_test.dart` | Implemented |
 
 ### Deferred From First Slice
 
