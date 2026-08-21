@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-███████████████████████░ 73%
+███████████████████████░ 74%
 ```
 
 ---
@@ -54,11 +54,11 @@ Overall Progress
 |------|:--------:|--------|-------|
 | Environment Setup | 100% | ✅ Completed | Git, Flutter, Android Studio, Android SDK are ready |
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
-| Product Documentation | 89% | 🟡 In Progress | Core product, flow, screen, database, UI, and SCR-006 Expense screen skeleton status exist |
+| Product Documentation | 90% | 🟡 In Progress | Core product, flow, screen, database, UI, and SCR-006 Expense save flow status exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 40% | 🟡 In Progress | Home can reopen saved trips and Trip Dashboard can open the Add Expense screen skeleton |
-| Testing & QA | 60% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, Home saved trips, saved trip dashboard reopen, Expense foundation, and Add Expense navigation pass `flutter analyze` and `flutter test` |
+| Core MVP Features | 42% | 🟡 In Progress | Add Expense now validates and saves through `ExpenseRepository` from Trip Dashboard |
+| Testing & QA | 62% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, Home saved trips, saved trip dashboard reopen, Expense foundation, Add Expense navigation, and Add Expense save flow pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -67,7 +67,7 @@ Overall Progress
 |-----------|-----------|:--------:|--------|
 | M0 | Development environment ready | 100% | ✅ Completed |
 | M1 | Git repository and GitHub ready | 100% | ✅ Completed |
-| M2 | Core product documentation drafted | 89% | 🟡 In Progress |
+| M2 | Core product documentation drafted | 90% | 🟡 In Progress |
 | M3 | Documentation status aligned with reality | 100% | ✅ Completed |
 | M4 | Flutter project scaffold created in `mobile/` | 100% | ✅ Completed |
 | M5 | App theme and folder architecture ready | 100% | ✅ Completed |
@@ -75,7 +75,7 @@ Overall Progress
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
 | M9 | Trip Management MVP implemented | 74% | 🟡 In Progress |
-| M10 | Expense Tracking MVP implemented | 25% | 🟡 In Progress |
+| M10 | Expense Tracking MVP implemented | 35% | 🟡 In Progress |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
 | M13 | Taiwan Beta build ready | 0% | ⏳ Planned |
@@ -172,6 +172,8 @@ Today Progress
 | Verify Add Expense screen skeleton | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 25 tests |
 | Commit SCR-006 Add Expense screen skeleton | ✅ Completed | Commit `d118a3a Add expense screen skeleton` |
 | Push SCR-006 Add Expense screen skeleton | ✅ Completed | Pushed SCR-006 Add Expense screen skeleton checkpoint to `origin/main` |
+| Wire Add Expense save flow | ✅ Completed | Add Expense now validates amount/currency, creates an `Expense`, saves through `ExpenseRepository`, and returns to Trip Dashboard |
+| Verify Add Expense save flow | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 25 tests |
 
 ## Today's Remaining Checklist
 
@@ -230,7 +232,9 @@ Today Progress
 - [x] Start SCR-006 Add Expense screen skeleton
 - [x] Commit SCR-006 Add Expense screen skeleton
 - [x] Push SCR-006 Add Expense screen skeleton to GitHub
-- [ ] Wire Add Expense save flow to ExpenseRepository
+- [x] Wire Add Expense save flow to ExpenseRepository
+- [ ] Commit Add Expense save flow
+- [ ] Push Add Expense save flow to GitHub
 
 ---
 
@@ -341,7 +345,11 @@ None
 
 # 💡 Next Action
 
-Wire Add Expense save flow to ExpenseRepository.
+Commit Add Expense save flow.
+
+After that,
+
+Implement Drift Expense storage.
 
 ---
 
@@ -369,7 +377,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 | Sprint 0.5 | Project Foundation | 92% | 🟡 In Progress |
 | Sprint 1 | App Entry | 100% | ✅ Completed |
 | Sprint 2 | Trip Management | 30% | 🟡 In Progress |
-| Sprint 3 | Expense Tracking | 25% | 🟡 In Progress |
+| Sprint 3 | Expense Tracking | 35% | 🟡 In Progress |
 | Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
 
 ### Sprint 1 Tasks
@@ -387,11 +395,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Add Expense save flow
+🟡 SCR-006 Add Expense save flow checkpoint
 
 Next
 
-➡ Wire Add Expense save flow to ExpenseRepository
+➡ Commit Add Expense save flow
 
 
 ---

@@ -2,15 +2,21 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../expense_tracking/domain/repositories/expense_repository.dart';
 import '../../../trip_management/domain/models/trip.dart';
 import '../../../trip_management/domain/repositories/trip_repository.dart';
 import '../../../trip_management/presentation/screens/create_trip_screen.dart';
 import '../../../trip_management/presentation/screens/trip_dashboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({required this.tripRepository, super.key});
+  const HomeScreen({
+    required this.tripRepository,
+    required this.expenseRepository,
+    super.key,
+  });
 
   final TripRepository tripRepository;
+  final ExpenseRepository expenseRepository;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -111,8 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _openCreateTrip(BuildContext context) async {
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (context) =>
-            CreateTripScreen(tripRepository: widget.tripRepository),
+        builder: (context) => CreateTripScreen(
+          tripRepository: widget.tripRepository,
+          expenseRepository: widget.expenseRepository,
+        ),
       ),
     );
 
@@ -130,10 +138,12 @@ class _HomeScreenState extends State<HomeScreen> {
       MaterialPageRoute<void>(
         builder: (context) {
           return TripDashboardScreen(
+            tripId: trip.id,
             tripName: trip.title,
             country: trip.country,
             startDate: trip.startDate,
             endDate: trip.endDate,
+            expenseRepository: widget.expenseRepository,
           );
         },
       ),

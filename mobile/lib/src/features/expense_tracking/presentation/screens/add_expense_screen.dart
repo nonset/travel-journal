@@ -3,23 +3,33 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../domain/models/expense.dart';
+import '../../domain/repositories/expense_repository.dart';
 
 class AddExpenseScreen extends StatefulWidget {
-  const AddExpenseScreen({required this.tripName, super.key});
+  const AddExpenseScreen({
+    required this.tripId,
+    required this.tripName,
+    required this.expenseRepository,
+    super.key,
+  });
 
+  final String tripId;
   final String tripName;
+  final ExpenseRepository expenseRepository;
 
   @override
   State<AddExpenseScreen> createState() => _AddExpenseScreenState();
 }
 
 class _AddExpenseScreenState extends State<AddExpenseScreen> {
+  final _formKey = GlobalKey<FormState>();
   final _amountController = TextEditingController();
   final _currencyController = TextEditingController(text: 'THB');
   final _noteController = TextEditingController();
   var _category = ExpenseCategory.food;
   var _paymentMethod = PaymentMethod.cash;
   late DateTime _expenseDate;
+  var _isSaving = false;
 
   @override
   void initState() {
@@ -42,111 +52,141 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text(AppStrings.addExpenseTitle)),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          children: [
-            Text(AppStrings.addExpenseTitle, style: textTheme.displaySmall),
-            const SizedBox(height: AppSpacing.sm),
-            Text(widget.tripName, style: textTheme.bodyLarge),
-            const SizedBox(height: AppSpacing.xl),
-            TextFormField(
-              controller: _amountController,
-              keyboardType: const TextInputType.numberWithOptions(
-                decimal: true,
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            children: [
+              Text(AppStrings.addExpenseTitle, style: textTheme.displaySmall),
+              const SizedBox(height: AppSpacing.sm),
+              Text(widget.tripName, style: textTheme.bodyLarge),
+              const SizedBox(height: AppSpacing.xl),
+              TextFormField(
+                controller: _amountController,
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.addExpenseAmountLabel,
+                  hintText: AppStrings.addExpenseAmountHint,
+                  prefixIcon: Icon(Icons.payments_outlined),
+                ),
+                validator: _amountValidator,
               ),
-              textInputAction: TextInputAction.next,
-              decoration: const InputDecoration(
-                labelText: AppStrings.addExpenseAmountLabel,
-                hintText: AppStrings.addExpenseAmountHint,
-                prefixIcon: Icon(Icons.payments_outlined),
-              ),
-            ),
-            const SizedBox(height: AppSpacing.md),
-            DropdownButtonFormField<ExpenseCategory>(
-              initialValue: _category,
-              decoration: const InputDecoration(
-                labelText: AppStrings.addExpenseCategoryLabel,
-                prefixIcon: Icon(Icons.category_outlined),
-              ),
-              items: [
-                for (final category in ExpenseCategory.values)
-                  DropdownMenuItem(
-                    value: category,
-                    child: Text(_categoryLabel(category)),
-                  ),
-              ],
-              onChanged: (value) {
-                if (value == null) {
-                  return;
-                }
+              const SizedBox(height: AppSpacing.md),
+              DropdownButtonFormField<ExpenseCategory>(
+                initialValue: _category,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.addExpenseCategoryLabel,
+                  prefixIcon: Icon(Icons.category_outlined),
+                ),
+                items: [
+                  for (final category in ExpenseCategory.values)
+                    DropdownMenuItem(
+                      value: category,
+                      child: Text(_categoryLabel(category)),
+                    ),
+                ],
+                onChanged: (value) {
+                  if (value == null) {
+                    return;
+                  }
 
-                setState(() {
-                  _category = value;
-                });
-              },
-            ),
-            const SizedBox(height: AppSpacing.md),
-            DropdownButtonFormField<PaymentMethod>(
-              initialValue: _paymentMethod,
-              decoration: const InputDecoration(
-                labelText: AppStrings.addExpensePaymentMethodLabel,
-                prefixIcon: Icon(Icons.account_balance_wallet_outlined),
+                  setState(() {
+                    _category = value;
+                  });
+                },
               ),
-              items: [
-                for (final method in PaymentMethod.values)
-                  DropdownMenuItem(
-                    value: method,
-                    child: Text(_paymentMethodLabel(method)),
-                  ),
-              ],
-              onChanged: (value) {
-                if (value == null) {
-                  return;
-                }
+              const SizedBox(height: AppSpacing.md),
+              DropdownButtonFormField<PaymentMethod>(
+                initialValue: _paymentMethod,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.addExpensePaymentMethodLabel,
+                  prefixIcon: Icon(Icons.account_balance_wallet_outlined),
+                ),
+                items: [
+                  for (final method in PaymentMethod.values)
+                    DropdownMenuItem(
+                      value: method,
+                      child: Text(_paymentMethodLabel(method)),
+                    ),
+                ],
+                onChanged: (value) {
+                  if (value == null) {
+                    return;
+                  }
 
-                setState(() {
-                  _paymentMethod = value;
-                });
-              },
-            ),
-            const SizedBox(height: AppSpacing.md),
-            TextFormField(
-              controller: _currencyController,
-              textCapitalization: TextCapitalization.characters,
-              textInputAction: TextInputAction.next,
-              decoration: const InputDecoration(
-                labelText: AppStrings.addExpenseCurrencyLabel,
-                prefixIcon: Icon(Icons.currency_exchange_rounded),
+                  setState(() {
+                    _paymentMethod = value;
+                  });
+                },
               ),
-            ),
-            const SizedBox(height: AppSpacing.lg),
-            _DatePickerCard(
-              label: AppStrings.addExpenseDateLabel,
-              date: _expenseDate,
-              onPressed: () => _pickExpenseDate(context),
-            ),
-            const SizedBox(height: AppSpacing.md),
-            TextFormField(
-              controller: _noteController,
-              minLines: 3,
-              maxLines: 5,
-              textInputAction: TextInputAction.done,
-              decoration: const InputDecoration(
-                labelText: AppStrings.addExpenseNoteLabel,
-                hintText: AppStrings.addExpenseNoteHint,
-                prefixIcon: Icon(Icons.edit_note_outlined),
+              const SizedBox(height: AppSpacing.md),
+              TextFormField(
+                controller: _currencyController,
+                textCapitalization: TextCapitalization.characters,
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.addExpenseCurrencyLabel,
+                  prefixIcon: Icon(Icons.currency_exchange_rounded),
+                ),
+                validator: _requiredValidator(
+                  AppStrings.addExpenseCurrencyRequired,
+                ),
               ),
-            ),
-            const SizedBox(height: AppSpacing.xl),
-            FilledButton.icon(
-              onPressed: _showDraftReady,
-              icon: const Icon(Icons.check_rounded),
-              label: const Text(AppStrings.addExpenseSave),
-            ),
-          ],
+              const SizedBox(height: AppSpacing.lg),
+              _DatePickerCard(
+                label: AppStrings.addExpenseDateLabel,
+                date: _expenseDate,
+                onPressed: () => _pickExpenseDate(context),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              TextFormField(
+                controller: _noteController,
+                minLines: 3,
+                maxLines: 5,
+                textInputAction: TextInputAction.done,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.addExpenseNoteLabel,
+                  hintText: AppStrings.addExpenseNoteHint,
+                  prefixIcon: Icon(Icons.edit_note_outlined),
+                ),
+              ),
+              const SizedBox(height: AppSpacing.xl),
+              FilledButton.icon(
+                onPressed: _isSaving ? null : _saveExpense,
+                icon: const Icon(Icons.check_rounded),
+                label: const Text(AppStrings.addExpenseSave),
+              ),
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  FormFieldValidator<String> _requiredValidator(String message) {
+    return (value) {
+      if (value == null || value.trim().isEmpty) {
+        return message;
+      }
+
+      return null;
+    };
+  }
+
+  String? _amountValidator(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return AppStrings.addExpenseAmountRequired;
+    }
+
+    final amount = double.tryParse(value.trim());
+    if (amount == null || amount <= 0) {
+      return AppStrings.addExpenseAmountInvalid;
+    }
+
+    return null;
   }
 
   Future<void> _pickExpenseDate(BuildContext context) async {
@@ -166,10 +206,38 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
     });
   }
 
-  void _showDraftReady() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text(AppStrings.addExpenseDraftReady)),
+  Future<void> _saveExpense() async {
+    final isValid = _formKey.currentState?.validate() ?? false;
+    if (!isValid) {
+      return;
+    }
+
+    setState(() {
+      _isSaving = true;
+    });
+
+    final expense = Expense.create(
+      id: 'expense-${DateTime.now().microsecondsSinceEpoch}',
+      tripId: widget.tripId,
+      category: _category,
+      paymentMethod: _paymentMethod,
+      amount: double.parse(_amountController.text.trim()),
+      currency: _currencyController.text,
+      expenseDate: _expenseDate,
+      note: _noteController.text,
+      createdAt: DateTime.now(),
     );
+
+    await widget.expenseRepository.saveExpense(expense);
+
+    if (!mounted) {
+      return;
+    }
+
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text(AppStrings.addExpenseSaved)));
+    Navigator.of(context).pop();
   }
 
   String _categoryLabel(ExpenseCategory category) {

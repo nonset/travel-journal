@@ -70,4 +70,8 @@ class AppStrings {
   static const addExpenseNoteHint = 'Optional memory about this expense';
   static const addExpenseSave = 'Save Expense';
   static const addExpenseDraftReady = 'Expense draft ready';
+  static const addExpenseSaved = 'Expense saved';
+  static const addExpenseAmountRequired = 'Amount is required';
+  static const addExpenseAmountInvalid = 'Amount must be greater than zero';
+  static const addExpenseCurrencyRequired = 'Currency is required';
 }

@@ -108,7 +108,7 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Wire Add Expense save flow to ExpenseRepository.
+Implement Drift Expense storage.
 
 ### Initial Drift Scope
 
@@ -171,9 +171,10 @@ The first implementation should cover the minimum reliable Expense foundation:
 | Temporary repository | `mobile/lib/src/features/expense_tracking/data/repositories/in_memory_expense_repository.dart` | Implemented |
 | Add Expense screen skeleton | `mobile/lib/src/features/expense_tracking/presentation/screens/add_expense_screen.dart` | Implemented |
 | Trip Dashboard entry | `mobile/lib/src/features/trip_management/presentation/screens/trip_dashboard_screen.dart` | Implemented |
+| Add Expense save flow | `mobile/lib/src/features/expense_tracking/presentation/screens/add_expense_screen.dart` | Implemented |
 | Domain tests | `mobile/test/features/expense_tracking/domain/expense_test.dart` | Implemented |
 | Repository tests | `mobile/test/features/expense_tracking/data/in_memory_expense_repository_test.dart` | Implemented |
-| Add Expense navigation test | `mobile/test/widget_test.dart` | Implemented |
+| Add Expense save flow test | `mobile/test/widget_test.dart` | Implemented |
 
 ### Deferred From First Slice
 
@@ -222,7 +223,7 @@ The first Add Expense screen should prioritize:
 
 Saving should feel instant and return the user to the trip context.
 
-The current skeleton opens from Trip Dashboard and contains amount, category, payment method, currency, date, optional note, and a save placeholder.
+The current Add Expense flow opens from Trip Dashboard, validates amount and currency, saves through `ExpenseRepository`, and returns the user to the trip context.
 
 ### Drift Dependencies
 

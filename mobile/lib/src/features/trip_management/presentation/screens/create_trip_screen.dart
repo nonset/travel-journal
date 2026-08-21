@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../expense_tracking/domain/repositories/expense_repository.dart';
 import '../../domain/models/trip.dart';
 import '../../domain/repositories/trip_repository.dart';
 import 'trip_dashboard_screen.dart';
 
 class CreateTripScreen extends StatefulWidget {
-  const CreateTripScreen({required this.tripRepository, super.key});
+  const CreateTripScreen({
+    required this.tripRepository,
+    required this.expenseRepository,
+    super.key,
+  });
 
   final TripRepository tripRepository;
+  final ExpenseRepository expenseRepository;
 
   @override
   State<CreateTripScreen> createState() => _CreateTripScreenState();
@@ -187,10 +193,12 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
       MaterialPageRoute<void>(
         builder: (context) {
           return TripDashboardScreen(
+            tripId: trip.id,
             tripName: trip.title,
             country: trip.country,
             startDate: trip.startDate,
             endDate: trip.endDate,
+            expenseRepository: widget.expenseRepository,
           );
         },
       ),

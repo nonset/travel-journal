@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../expense_tracking/domain/repositories/expense_repository.dart';
 import '../../../expense_tracking/presentation/screens/add_expense_screen.dart';
 
 class TripDashboardScreen extends StatelessWidget {
   const TripDashboardScreen({
+    required this.tripId,
     required this.tripName,
     required this.country,
     required this.startDate,
     required this.endDate,
+    required this.expenseRepository,
     super.key,
   });
 
+  final String tripId;
   final String tripName;
   final String country;
   final DateTime startDate;
   final DateTime endDate;
+  final ExpenseRepository expenseRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +82,11 @@ class TripDashboardScreen extends StatelessWidget {
   void _openAddExpense(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (context) => AddExpenseScreen(tripName: tripName),
+        builder: (context) => AddExpenseScreen(
+          tripId: tripId,
+          tripName: tripName,
+          expenseRepository: expenseRepository,
+        ),
       ),
     );
   }

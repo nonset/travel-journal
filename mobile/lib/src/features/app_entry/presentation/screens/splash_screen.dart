@@ -4,13 +4,19 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../expense_tracking/domain/repositories/expense_repository.dart';
 import '../../../trip_management/domain/repositories/trip_repository.dart';
 import 'welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({required this.tripRepository, super.key});
+  const SplashScreen({
+    required this.tripRepository,
+    required this.expenseRepository,
+    super.key,
+  });
 
   final TripRepository tripRepository;
+  final ExpenseRepository expenseRepository;
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -44,7 +50,10 @@ class _SplashScreenState extends State<SplashScreen>
     Navigator.of(context).pushReplacement(
       PageRouteBuilder<void>(
         pageBuilder: (context, animation, secondaryAnimation) {
-          return WelcomeScreen(tripRepository: widget.tripRepository);
+          return WelcomeScreen(
+            tripRepository: widget.tripRepository,
+            expenseRepository: widget.expenseRepository,
+          );
         },
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(opacity: animation, child: child);

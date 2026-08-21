@@ -1,7 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_journal/src/app/travel_journal_app.dart';
 import 'package:travel_journal/src/core/constants/app_strings.dart';
+import 'package:travel_journal/src/features/expense_tracking/data/repositories/in_memory_expense_repository.dart';
+import 'package:travel_journal/src/features/expense_tracking/domain/models/expense.dart';
 import 'package:travel_journal/src/features/trip_management/data/repositories/in_memory_trip_repository.dart';
 import 'package:travel_journal/src/features/trip_management/domain/models/trip.dart';
 
@@ -157,12 +159,23 @@ void main() {
     expect(find.text(AppStrings.tripDashboardQuickActions), findsOneWidget);
   });
 
-  testWidgets('opens add expense screen from trip dashboard', (
+  testWidgets('saves add expense from trip dashboard', (
     WidgetTester tester,
   ) async {
-    final repository = InMemoryTripRepository();
+    await tester.binding.setSurfaceSize(const Size(800, 1000));
+    addTearDown(() async {
+      await tester.binding.setSurfaceSize(null);
+    });
 
-    await tester.pumpWidget(TravelJournalApp(tripRepository: repository));
+    final tripRepository = InMemoryTripRepository();
+    final expenseRepository = InMemoryExpenseRepository();
+
+    await tester.pumpWidget(
+      TravelJournalApp(
+        tripRepository: tripRepository,
+        expenseRepository: expenseRepository,
+      ),
+    );
     await tester.pump(const Duration(milliseconds: 1300));
     await tester.pumpAndSettle();
     await tester.tap(find.text(AppStrings.welcomePrimaryAction));
@@ -192,6 +205,12 @@ void main() {
     expect(find.text(AppStrings.addExpenseCategoryLabel), findsOneWidget);
     expect(find.text(AppStrings.addExpensePaymentMethodLabel), findsOneWidget);
 
+    await tester.enterText(
+      find.bySemanticsLabel(AppStrings.addExpenseAmountLabel),
+      '245.75',
+    );
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    await tester.pumpAndSettle();
     await tester.drag(find.byType(ListView), const Offset(0, -600));
     await tester.pumpAndSettle();
 
@@ -199,6 +218,27 @@ void main() {
     expect(find.text(AppStrings.addExpenseDateLabel), findsOneWidget);
     expect(find.text(AppStrings.addExpenseNoteLabel), findsOneWidget);
     expect(find.text(AppStrings.addExpenseSave), findsOneWidget);
+
+    final saveExpenseButton = find.widgetWithText(
+      FilledButton,
+      AppStrings.addExpenseSave,
+    );
+    await tester.ensureVisible(saveExpenseButton);
+    await tester.pumpAndSettle();
+    await tester.tap(saveExpenseButton);
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.tripDashboardTitle), findsOneWidget);
+
+    final trips = await tripRepository.getTrips();
+    final expenses = await expenseRepository.getExpensesForTrip(
+      trips.single.id,
+    );
+    expect(expenses, hasLength(1));
+    expect(expenses.single.tripId, trips.single.id);
+    expect(expenses.single.amount, 245.75);
+    expect(expenses.single.currency, 'THB');
+    expect(expenses.single.category, ExpenseCategory.food);
   });
 }
 

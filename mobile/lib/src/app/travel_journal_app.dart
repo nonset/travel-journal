@@ -3,14 +3,21 @@ import 'package:flutter/material.dart';
 import '../core/constants/app_strings.dart';
 import '../core/database/app_database.dart';
 import '../core/theme/app_theme.dart';
+import '../features/expense_tracking/data/repositories/in_memory_expense_repository.dart';
+import '../features/expense_tracking/domain/repositories/expense_repository.dart';
 import '../features/trip_management/data/repositories/drift_trip_repository.dart';
 import '../features/trip_management/domain/repositories/trip_repository.dart';
 import '../features/app_entry/presentation/screens/splash_screen.dart';
 
 class TravelJournalApp extends StatefulWidget {
-  const TravelJournalApp({super.key, this.tripRepository});
+  const TravelJournalApp({
+    super.key,
+    this.tripRepository,
+    this.expenseRepository,
+  });
 
   final TripRepository? tripRepository;
+  final ExpenseRepository? expenseRepository;
 
   @override
   State<TravelJournalApp> createState() => _TravelJournalAppState();
@@ -19,11 +26,14 @@ class TravelJournalApp extends StatefulWidget {
 class _TravelJournalAppState extends State<TravelJournalApp> {
   AppDatabase? _database;
   late final TripRepository _tripRepository;
+  late final ExpenseRepository _expenseRepository;
 
   @override
   void initState() {
     super.initState();
     final providedRepository = widget.tripRepository;
+    _expenseRepository =
+        widget.expenseRepository ?? InMemoryExpenseRepository();
     if (providedRepository != null) {
       _tripRepository = providedRepository;
       return;
@@ -48,7 +58,10 @@ class _TravelJournalAppState extends State<TravelJournalApp> {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
-      home: SplashScreen(tripRepository: _tripRepository),
+      home: SplashScreen(
+        tripRepository: _tripRepository,
+        expenseRepository: _expenseRepository,
+      ),
     );
   }
 }
