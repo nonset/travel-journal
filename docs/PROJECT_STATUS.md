@@ -174,6 +174,8 @@ Today Progress
 | Push SCR-006 Add Expense screen skeleton | ✅ Completed | Pushed SCR-006 Add Expense screen skeleton checkpoint to `origin/main` |
 | Wire Add Expense save flow | ✅ Completed | Add Expense now validates amount/currency, creates an `Expense`, saves through `ExpenseRepository`, and returns to Trip Dashboard |
 | Verify Add Expense save flow | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 25 tests |
+| Commit Add Expense save flow | ✅ Completed | Commit `b13e679 Wire add expense save flow` |
+| Push Add Expense save flow | ✅ Completed | Pushed Add Expense save flow checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -233,8 +235,9 @@ Today Progress
 - [x] Commit SCR-006 Add Expense screen skeleton
 - [x] Push SCR-006 Add Expense screen skeleton to GitHub
 - [x] Wire Add Expense save flow to ExpenseRepository
-- [ ] Commit Add Expense save flow
-- [ ] Push Add Expense save flow to GitHub
+- [x] Commit Add Expense save flow
+- [x] Push Add Expense save flow to GitHub
+- [ ] Implement Drift Expense storage
 
 ---
 
@@ -345,10 +348,6 @@ None
 
 # 💡 Next Action
 
-Commit Add Expense save flow.
-
-After that,
-
 Implement Drift Expense storage.
 
 ---
@@ -395,11 +394,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Add Expense save flow checkpoint
+🟡 Expense Drift storage
 
 Next
 
-➡ Commit Add Expense save flow
+➡ Implement Drift Expense storage
 
 
 ---
