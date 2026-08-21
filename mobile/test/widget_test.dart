@@ -111,7 +111,7 @@ void main() {
     await tester.drag(find.byType(ListView), const Offset(0, -600));
     await tester.pumpAndSettle();
 
-    expect(find.text(AppStrings.tripDashboardNoActivity), findsOneWidget);
+    expect(find.text(AppStrings.tripDashboardNoExpenses), findsOneWidget);
 
     final trips = await repository.getTrips();
     expect(trips, hasLength(1));
@@ -229,6 +229,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.tripDashboardTitle), findsOneWidget);
+    expect(find.text('245.75 THB'), findsOneWidget);
+    expect(find.textContaining('Food - '), findsOneWidget);
 
     final trips = await tripRepository.getTrips();
     final expenses = await expenseRepository.getExpensesForTrip(

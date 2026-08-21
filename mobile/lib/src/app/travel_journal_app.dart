@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/constants/app_strings.dart';
 import '../core/database/app_database.dart';
 import '../core/theme/app_theme.dart';
+import '../features/expense_tracking/data/repositories/drift_expense_repository.dart';
 import '../features/expense_tracking/data/repositories/in_memory_expense_repository.dart';
 import '../features/expense_tracking/domain/repositories/expense_repository.dart';
 import '../features/trip_management/data/repositories/drift_trip_repository.dart';
@@ -32,16 +33,18 @@ class _TravelJournalAppState extends State<TravelJournalApp> {
   void initState() {
     super.initState();
     final providedRepository = widget.tripRepository;
-    _expenseRepository =
-        widget.expenseRepository ?? InMemoryExpenseRepository();
     if (providedRepository != null) {
       _tripRepository = providedRepository;
+      _expenseRepository =
+          widget.expenseRepository ?? InMemoryExpenseRepository();
       return;
     }
 
     final database = AppDatabase();
     _database = database;
     _tripRepository = DriftTripRepository(database);
+    _expenseRepository =
+        widget.expenseRepository ?? DriftExpenseRepository(database);
   }
 
   @override

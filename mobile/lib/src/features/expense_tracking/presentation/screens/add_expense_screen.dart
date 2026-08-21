@@ -9,12 +9,16 @@ class AddExpenseScreen extends StatefulWidget {
   const AddExpenseScreen({
     required this.tripId,
     required this.tripName,
+    required this.tripStartDate,
+    required this.tripEndDate,
     required this.expenseRepository,
     super.key,
   });
 
   final String tripId;
   final String tripName;
+  final DateTime tripStartDate;
+  final DateTime tripEndDate;
   final ExpenseRepository expenseRepository;
 
   @override
@@ -34,7 +38,7 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
   @override
   void initState() {
     super.initState();
-    _expenseDate = DateUtils.dateOnly(DateTime.now());
+    _expenseDate = DateUtils.dateOnly(widget.tripStartDate);
   }
 
   @override
@@ -172,6 +176,11 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
         return message;
       }
 
+      if (message == AppStrings.addExpenseCurrencyRequired &&
+          value.trim().length != 3) {
+        return AppStrings.addExpenseCurrencyInvalid;
+      }
+
       return null;
     };
   }
@@ -193,8 +202,8 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
     final pickedDate = await showDatePicker(
       context: context,
       initialDate: _expenseDate,
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2100),
+      firstDate: DateUtils.dateOnly(widget.tripStartDate),
+      lastDate: DateUtils.dateOnly(widget.tripEndDate),
     );
 
     if (pickedDate == null || !mounted) {
@@ -209,6 +218,14 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
   Future<void> _saveExpense() async {
     final isValid = _formKey.currentState?.validate() ?? false;
     if (!isValid) {
+      return;
+    }
+
+    if (_expenseDate.isBefore(DateUtils.dateOnly(widget.tripStartDate)) ||
+        _expenseDate.isAfter(DateUtils.dateOnly(widget.tripEndDate))) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text(AppStrings.addExpenseDateInvalid)),
+      );
       return;
     }
 

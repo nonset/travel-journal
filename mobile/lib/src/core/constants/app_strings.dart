@@ -51,6 +51,9 @@ class AppStrings {
   static const tripDashboardNoActivity = 'No memories recorded yet';
   static const tripDashboardNoActivitySubtitle =
       'Start with an expense, photo, mood, or daily note.';
+  static const tripDashboardNoExpenses = 'No expenses yet';
+  static const tripDashboardExpenseSubtitle =
+      'Saved expenses will appear here.';
   static const tripDashboardAddExpense = 'Add Expense';
   static const tripDashboardAddPhoto = 'Add Photo';
   static const tripDashboardAddEmotion = 'Add Mood';
@@ -74,4 +77,6 @@ class AppStrings {
   static const addExpenseAmountRequired = 'Amount is required';
   static const addExpenseAmountInvalid = 'Amount must be greater than zero';
   static const addExpenseCurrencyRequired = 'Currency is required';
+  static const addExpenseCurrencyInvalid = 'Use a 3-letter currency code';
+  static const addExpenseDateInvalid = 'Expense date must be within trip dates';
 }

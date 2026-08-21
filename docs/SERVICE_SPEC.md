@@ -108,15 +108,16 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Implement Drift Expense storage.
+Start UI/UX Review Sprint before adding more heavy features.
 
-### Initial Drift Scope
+### Current Drift Scope
 
-The first storage implementation should cover only Trip records.
+The current storage implementation covers Trip and Expense records.
 
 | Table | Purpose | Status |
 |------|---------|--------|
 | `trips` | Store Trip records | Implemented |
+| `expenses` | Store Expense records | Implemented |
 
 Initial `trips` columns:
 
@@ -139,7 +140,7 @@ Initial indexes:
 - `start_date`
 - `status`
 
-Do not implement Expense, Photo, Emotion, Daily Note, or Trip Summary tables until their feature screens are ready.
+Do not implement Photo, Emotion, Daily Note, or Trip Summary tables until their feature screens are ready.
 
 ---
 
@@ -172,15 +173,18 @@ The first implementation should cover the minimum reliable Expense foundation:
 | Add Expense screen skeleton | `mobile/lib/src/features/expense_tracking/presentation/screens/add_expense_screen.dart` | Implemented |
 | Trip Dashboard entry | `mobile/lib/src/features/trip_management/presentation/screens/trip_dashboard_screen.dart` | Implemented |
 | Add Expense save flow | `mobile/lib/src/features/expense_tracking/presentation/screens/add_expense_screen.dart` | Implemented |
+| Expenses table | `mobile/lib/src/features/expense_tracking/data/database/expenses_table.dart` | Implemented |
+| Drift repository | `mobile/lib/src/features/expense_tracking/data/repositories/drift_expense_repository.dart` | Implemented |
+| Trip Dashboard expense display | `mobile/lib/src/features/trip_management/presentation/screens/trip_dashboard_screen.dart` | Implemented |
 | Domain tests | `mobile/test/features/expense_tracking/domain/expense_test.dart` | Implemented |
 | Repository tests | `mobile/test/features/expense_tracking/data/in_memory_expense_repository_test.dart` | Implemented |
+| Drift repository tests | `mobile/test/features/expense_tracking/data/drift_expense_repository_test.dart` | Implemented |
 | Add Expense save flow test | `mobile/test/widget_test.dart` | Implemented |
 
 ### Deferred From First Slice
 
 These should not be implemented in the first Expense foundation checkpoint:
 
-- Drift `expenses` table
 - Receipt photos
 - Emotion links
 - Location capture
@@ -223,7 +227,7 @@ The first Add Expense screen should prioritize:
 
 Saving should feel instant and return the user to the trip context.
 
-The current Add Expense flow opens from Trip Dashboard, validates amount and currency, saves through `ExpenseRepository`, and returns the user to the trip context.
+The current Add Expense flow opens from Trip Dashboard, validates amount, currency, and trip date range, saves through `ExpenseRepository`, returns the user to the trip context, and shows the saved expense on Trip Dashboard.
 
 ### Drift Dependencies
 

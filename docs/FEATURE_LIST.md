@@ -43,15 +43,15 @@ not just numbers in a spreadsheet.
 
 | Feature | Description | MVP | Priority | Screen | Status |
 |----------|-------------|:---:|:--------:|--------|--------|
-| Add Expense | Record a new expense | ✅ | 🔴 High | Add Expense | Planned |
+| Add Expense | Record a new expense | ✅ | 🔴 High | Add Expense | Implemented |
 | Edit Expense | Edit expense information | ✅ | 🟡 Medium | Expense Detail | Planned |
 | Delete Expense | Delete an expense | ✅ | 🔴 High | Expense Detail | Planned |
-| Expense Category | Select expense category | ✅ | 🔴 High | Add Expense | Planned |
-| Payment Method | Cash / Credit Card / E-Wallet | ✅ | 🟡 Medium | Add Expense | Planned |
-| Currency | Select expense currency | ✅ | 🔴 High | Add Expense | Planned |
+| Expense Category | Select expense category | ✅ | 🔴 High | Add Expense | Implemented |
+| Payment Method | Cash / Credit Card / E-Wallet | ✅ | 🟡 Medium | Add Expense | Implemented |
+| Currency | Select expense currency | ✅ | 🔴 High | Add Expense | Implemented |
 | Expense Photos | Attach receipt or related photos | ✅ | 🟡 Medium | Expense Detail | Planned |
 | Expense Location | Save where the expense occurred | ✅ | 🟢 Low | Add Expense | Planned |
-| Expense Notes | Add optional notes | ✅ | 🟢 Low | Expense Detail | Planned |
+| Expense Notes | Add optional notes | ✅ | 🟢 Low | Expense Detail | Implemented |
 | Favorite Expense | Pin important expenses | ❌ | 🔵 Future | Expense Detail | Planned |
 
 ---

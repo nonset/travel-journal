@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../expense_tracking/domain/models/expense.dart';
 import '../../../expense_tracking/domain/repositories/expense_repository.dart';
 import '../../../expense_tracking/presentation/screens/add_expense_screen.dart';
 
-class TripDashboardScreen extends StatelessWidget {
+class TripDashboardScreen extends StatefulWidget {
   const TripDashboardScreen({
     required this.tripId,
     required this.tripName,
@@ -22,6 +23,21 @@ class TripDashboardScreen extends StatelessWidget {
   final DateTime startDate;
   final DateTime endDate;
   final ExpenseRepository expenseRepository;
+
+  @override
+  State<TripDashboardScreen> createState() => _TripDashboardScreenState();
+}
+
+class _TripDashboardScreenState extends State<TripDashboardScreen> {
+  late Future<List<Expense>> _expensesFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _expensesFuture = widget.expenseRepository.getExpensesForTrip(
+      widget.tripId,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +60,22 @@ class TripDashboardScreen extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.lg),
           children: [
             _TripHero(
-              tripName: tripName,
-              country: country,
-              dateRange: '${_formatDate(startDate)} - ${_formatDate(endDate)}',
+              tripName: widget.tripName,
+              country: widget.country,
+              dateRange:
+                  '${_formatDate(widget.startDate)} - ${_formatDate(widget.endDate)}',
             ),
             const SizedBox(height: AppSpacing.xl),
             Text(AppStrings.tripDashboardOverview, style: textTheme.titleLarge),
             const SizedBox(height: AppSpacing.md),
-            const _OverviewRow(),
+            FutureBuilder<List<Expense>>(
+              future: _expensesFuture,
+              builder: (context, snapshot) {
+                final expenses = snapshot.data ?? const <Expense>[];
+
+                return _OverviewRow(expenseCount: expenses.length);
+              },
+            ),
             const SizedBox(height: AppSpacing.xl),
             Text(
               AppStrings.tripDashboardQuickActions,
@@ -65,7 +89,33 @@ class TripDashboardScreen extends StatelessWidget {
               style: textTheme.titleLarge,
             ),
             const SizedBox(height: AppSpacing.md),
-            _ActivityEmptyState(colorScheme: colorScheme, textTheme: textTheme),
+            FutureBuilder<List<Expense>>(
+              future: _expensesFuture,
+              builder: (context, snapshot) {
+                final expenses = snapshot.data ?? const <Expense>[];
+
+                if (snapshot.connectionState != ConnectionState.done) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                if (expenses.isEmpty) {
+                  return _ActivityEmptyState(
+                    colorScheme: colorScheme,
+                    textTheme: textTheme,
+                  );
+                }
+
+                return Column(
+                  children: [
+                    for (final expense in expenses)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                        child: _ExpenseActivityCard(expense: expense),
+                      ),
+                  ],
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -79,16 +129,28 @@ class TripDashboardScreen extends StatelessWidget {
     return '${date.year}-$month-$day';
   }
 
-  void _openAddExpense(BuildContext context) {
-    Navigator.of(context).push(
+  Future<void> _openAddExpense(BuildContext context) async {
+    await Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (context) => AddExpenseScreen(
-          tripId: tripId,
-          tripName: tripName,
-          expenseRepository: expenseRepository,
+          tripId: widget.tripId,
+          tripName: widget.tripName,
+          tripStartDate: widget.startDate,
+          tripEndDate: widget.endDate,
+          expenseRepository: widget.expenseRepository,
         ),
       ),
     );
+
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _expensesFuture = widget.expenseRepository.getExpensesForTrip(
+        widget.tripId,
+      );
+    });
   }
 }
 
@@ -163,21 +225,23 @@ class _TripHero extends StatelessWidget {
 }
 
 class _OverviewRow extends StatelessWidget {
-  const _OverviewRow();
+  const _OverviewRow({required this.expenseCount});
+
+  final int expenseCount;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Expanded(
-          child: _MetricCard(value: '0', label: 'Expenses'),
+          child: _MetricCard(value: '$expenseCount', label: 'Expenses'),
         ),
-        SizedBox(width: AppSpacing.md),
-        Expanded(
+        const SizedBox(width: AppSpacing.md),
+        const Expanded(
           child: _MetricCard(value: '0', label: 'Photos'),
         ),
-        SizedBox(width: AppSpacing.md),
-        Expanded(
+        const SizedBox(width: AppSpacing.md),
+        const Expanded(
           child: _MetricCard(value: '0', label: 'Notes'),
         ),
       ],
@@ -323,12 +387,12 @@ class _ActivityEmptyState extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppStrings.tripDashboardNoActivity,
+                    AppStrings.tripDashboardNoExpenses,
                     style: textTheme.titleLarge,
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(
-                    AppStrings.tripDashboardNoActivitySubtitle,
+                    AppStrings.tripDashboardExpenseSubtitle,
                     style: textTheme.bodyMedium,
                   ),
                 ],
@@ -338,5 +402,76 @@ class _ActivityEmptyState extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class _ExpenseActivityCard extends StatelessWidget {
+  const _ExpenseActivityCard({required this.expense});
+
+  final Expense expense;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.md),
+        child: Row(
+          children: [
+            DecoratedBox(
+              decoration: BoxDecoration(
+                color: colorScheme.secondaryContainer,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                child: Icon(
+                  Icons.payments_outlined,
+                  color: colorScheme.secondary,
+                ),
+              ),
+            ),
+            const SizedBox(width: AppSpacing.md),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${expense.amount.toStringAsFixed(2)} ${expense.currency}',
+                    style: textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    '${_categoryLabel(expense.category)} - ${_formatDate(expense.expenseDate)}',
+                    style: textTheme.bodyMedium,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _categoryLabel(ExpenseCategory category) {
+    return switch (category) {
+      ExpenseCategory.food => 'Food',
+      ExpenseCategory.hotel => 'Hotel',
+      ExpenseCategory.transport => 'Transport',
+      ExpenseCategory.shopping => 'Shopping',
+      ExpenseCategory.entertainment => 'Entertainment',
+      ExpenseCategory.ticket => 'Ticket',
+      ExpenseCategory.other => 'Other',
+    };
+  }
+
+  String _formatDate(DateTime date) {
+    final month = date.month.toString().padLeft(2, '0');
+    final day = date.day.toString().padLeft(2, '0');
+
+    return '${date.year}-$month-$day';
   }
 }

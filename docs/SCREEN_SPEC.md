@@ -420,7 +420,7 @@ Screen ID : SCR-006
 
 Priority : High
 
-Status : ⬜ Not Started
+Status : 🚀 Implemented
 
 > (รายละเอียด)
 
