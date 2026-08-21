@@ -108,7 +108,7 @@ Use Drift for typed data access, SQLite persistence, migrations, and local-first
 
 ### Next Implementation Step
 
-Commit SCR-006 Expense domain foundation.
+Start SCR-006 Add Expense screen skeleton.
 
 ### Initial Drift Scope
 
