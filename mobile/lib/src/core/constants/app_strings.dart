@@ -58,4 +58,16 @@ class AppStrings {
   static const tripDashboardTimeline = 'Timeline';
   static const tripDashboardSummary = 'Summary';
   static const tripDashboardSettingsTooltip = 'Trip settings';
+  static const addExpenseTitle = 'Add Expense';
+  static const addExpenseSubtitle = 'Record a travel expense in a few taps.';
+  static const addExpenseAmountLabel = 'Amount';
+  static const addExpenseAmountHint = '120.50';
+  static const addExpenseCategoryLabel = 'Category';
+  static const addExpensePaymentMethodLabel = 'Payment method';
+  static const addExpenseCurrencyLabel = 'Currency';
+  static const addExpenseDateLabel = 'Expense date';
+  static const addExpenseNoteLabel = 'Note';
+  static const addExpenseNoteHint = 'Optional memory about this expense';
+  static const addExpenseSave = 'Save Expense';
+  static const addExpenseDraftReady = 'Expense draft ready';
 }

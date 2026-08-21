@@ -106,7 +106,7 @@ void main() {
     expect(find.text(AppStrings.tripDashboardQuickActions), findsOneWidget);
     expect(find.text(AppStrings.tripDashboardAddExpense), findsOneWidget);
 
-    await tester.drag(find.byType(Scrollable), const Offset(0, -600));
+    await tester.drag(find.byType(ListView), const Offset(0, -600));
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.tripDashboardNoActivity), findsOneWidget);
@@ -155,6 +155,50 @@ void main() {
     expect(find.text('Taiwan'), findsOneWidget);
     expect(find.text('2026-10-05 - 2026-10-08'), findsOneWidget);
     expect(find.text(AppStrings.tripDashboardQuickActions), findsOneWidget);
+  });
+
+  testWidgets('opens add expense screen from trip dashboard', (
+    WidgetTester tester,
+  ) async {
+    final repository = InMemoryTripRepository();
+
+    await tester.pumpWidget(TravelJournalApp(tripRepository: repository));
+    await tester.pump(const Duration(milliseconds: 1300));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.welcomePrimaryAction));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.homeCreateTrip).first);
+    await tester.pumpAndSettle();
+
+    await tester.enterText(
+      find.bySemanticsLabel(AppStrings.createTripNameLabel),
+      'Taiwan Beta Trip 2026',
+    );
+    await tester.enterText(
+      find.bySemanticsLabel(AppStrings.createTripCountryLabel),
+      'Taiwan',
+    );
+    await tester.tap(find.text(AppStrings.createTripSave));
+    await tester.pumpAndSettle();
+
+    await tester.drag(find.byType(ListView), const Offset(0, -350));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.tripDashboardAddExpense));
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.addExpenseTitle), findsWidgets);
+    expect(find.text('Taiwan Beta Trip 2026'), findsOneWidget);
+    expect(find.text(AppStrings.addExpenseAmountLabel), findsOneWidget);
+    expect(find.text(AppStrings.addExpenseCategoryLabel), findsOneWidget);
+    expect(find.text(AppStrings.addExpensePaymentMethodLabel), findsOneWidget);
+
+    await tester.drag(find.byType(ListView), const Offset(0, -600));
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.addExpenseCurrencyLabel), findsOneWidget);
+    expect(find.text(AppStrings.addExpenseDateLabel), findsOneWidget);
+    expect(find.text(AppStrings.addExpenseNoteLabel), findsOneWidget);
+    expect(find.text(AppStrings.addExpenseSave), findsOneWidget);
   });
 }
 

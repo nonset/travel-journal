@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../expense_tracking/presentation/screens/add_expense_screen.dart';
 
 class TripDashboardScreen extends StatelessWidget {
   const TripDashboardScreen({
@@ -52,7 +53,7 @@ class TripDashboardScreen extends StatelessWidget {
               style: textTheme.titleLarge,
             ),
             const SizedBox(height: AppSpacing.md),
-            const _DashboardActionGrid(),
+            _DashboardActionGrid(onAddExpense: () => _openAddExpense(context)),
             const SizedBox(height: AppSpacing.xl),
             Text(
               AppStrings.tripDashboardRecentActivity,
@@ -71,6 +72,14 @@ class TripDashboardScreen extends StatelessWidget {
     final day = date.day.toString().padLeft(2, '0');
 
     return '${date.year}-$month-$day';
+  }
+
+  void _openAddExpense(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (context) => AddExpenseScreen(tripName: tripName),
+      ),
+    );
   }
 }
 
@@ -199,35 +208,38 @@ class _MetricCard extends StatelessWidget {
 }
 
 class _DashboardActionGrid extends StatelessWidget {
-  const _DashboardActionGrid();
+  const _DashboardActionGrid({required this.onAddExpense});
+
+  final VoidCallback onAddExpense;
 
   @override
   Widget build(BuildContext context) {
-    return const Wrap(
+    return Wrap(
       spacing: AppSpacing.md,
       runSpacing: AppSpacing.md,
       children: [
         _DashboardActionTile(
           icon: Icons.payments_outlined,
           label: AppStrings.tripDashboardAddExpense,
+          onTap: onAddExpense,
         ),
-        _DashboardActionTile(
+        const _DashboardActionTile(
           icon: Icons.photo_camera_outlined,
           label: AppStrings.tripDashboardAddPhoto,
         ),
-        _DashboardActionTile(
+        const _DashboardActionTile(
           icon: Icons.mood_outlined,
           label: AppStrings.tripDashboardAddEmotion,
         ),
-        _DashboardActionTile(
+        const _DashboardActionTile(
           icon: Icons.edit_note_outlined,
           label: AppStrings.tripDashboardAddNote,
         ),
-        _DashboardActionTile(
+        const _DashboardActionTile(
           icon: Icons.timeline_rounded,
           label: AppStrings.tripDashboardTimeline,
         ),
-        _DashboardActionTile(
+        const _DashboardActionTile(
           icon: Icons.auto_stories_outlined,
           label: AppStrings.tripDashboardSummary,
         ),
@@ -237,10 +249,15 @@ class _DashboardActionGrid extends StatelessWidget {
 }
 
 class _DashboardActionTile extends StatelessWidget {
-  const _DashboardActionTile({required this.icon, required this.label});
+  const _DashboardActionTile({
+    required this.icon,
+    required this.label,
+    this.onTap,
+  });
 
   final IconData icon;
   final String label;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +268,7 @@ class _DashboardActionTile extends StatelessWidget {
       width: 140,
       child: Card(
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           borderRadius: BorderRadius.circular(16),
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.md),

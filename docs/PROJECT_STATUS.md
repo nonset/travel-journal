@@ -41,7 +41,7 @@ Build the easiest and most enjoyable travel journal application that helps trave
 ```
 Overall Progress
 
-███████████████████████░ 72%
+███████████████████████░ 73%
 ```
 
 ---
@@ -54,11 +54,11 @@ Overall Progress
 |------|:--------:|--------|-------|
 | Environment Setup | 100% | ✅ Completed | Git, Flutter, Android Studio, Android SDK are ready |
 | Repository Setup | 100% | ✅ Completed | Local Git and GitHub repository are connected |
-| Product Documentation | 88% | 🟡 In Progress | Core product, flow, screen, database, UI, and SCR-006 Expense foundation implementation status exist |
+| Product Documentation | 89% | 🟡 In Progress | Core product, flow, screen, database, UI, and SCR-006 Expense screen skeleton status exist |
 | Flutter Scaffold | 100% | ✅ Completed | Flutter project was created in `mobile/` |
 | App Entry Screens | 100% | ✅ Completed | SCR-001 Splash, SCR-002 Welcome, and SCR-003 Home are implemented |
-| Core MVP Features | 38% | 🟡 In Progress | Home can reopen saved trips into Trip Dashboard and SCR-006 Expense domain foundation is implemented |
-| Testing & QA | 58% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, Home saved trips, saved trip dashboard reopen, and Expense foundation pass `flutter analyze` and `flutter test` |
+| Core MVP Features | 40% | 🟡 In Progress | Home can reopen saved trips and Trip Dashboard can open the Add Expense screen skeleton |
+| Testing & QA | 60% | 🟡 In Progress | Scaffold, app shell, SCR-001 to SCR-005, Trip model, repositories, Create Trip save flow, Home saved trips, saved trip dashboard reopen, Expense foundation, and Add Expense navigation pass `flutter analyze` and `flutter test` |
 | Release Readiness | 0% | ⏳ Planned | Taiwan Beta and public release are future milestones |
 
 ## Project Milestone Checklist
@@ -67,7 +67,7 @@ Overall Progress
 |-----------|-----------|:--------:|--------|
 | M0 | Development environment ready | 100% | ✅ Completed |
 | M1 | Git repository and GitHub ready | 100% | ✅ Completed |
-| M2 | Core product documentation drafted | 88% | 🟡 In Progress |
+| M2 | Core product documentation drafted | 89% | 🟡 In Progress |
 | M3 | Documentation status aligned with reality | 100% | ✅ Completed |
 | M4 | Flutter project scaffold created in `mobile/` | 100% | ✅ Completed |
 | M5 | App theme and folder architecture ready | 100% | ✅ Completed |
@@ -75,7 +75,7 @@ Overall Progress
 | M7 | SCR-002 Welcome implemented and checked | 100% | ✅ Completed |
 | M8 | SCR-003 Home implemented and checked | 100% | ✅ Completed |
 | M9 | Trip Management MVP implemented | 74% | 🟡 In Progress |
-| M10 | Expense Tracking MVP implemented | 15% | 🟡 In Progress |
+| M10 | Expense Tracking MVP implemented | 25% | 🟡 In Progress |
 | M11 | Journal modules implemented | 0% | ⏳ Planned |
 | M12 | Trip Summary MVP implemented | 0% | ⏳ Planned |
 | M13 | Taiwan Beta build ready | 0% | ⏳ Planned |
@@ -167,6 +167,9 @@ Today Progress
 | Verify SCR-006 Expense domain foundation | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 24 tests |
 | Commit SCR-006 Expense domain foundation | ✅ Completed | Commit `2b63de5 Add expense domain foundation` |
 | Push SCR-006 Expense domain foundation | ✅ Completed | Pushed SCR-006 Expense domain foundation checkpoint to `origin/main` |
+| Start SCR-006 Add Expense screen skeleton | ✅ Completed | Added Add Expense screen with amount, category, payment method, currency, date, note, and save placeholder |
+| Wire Trip Dashboard Add Expense entry | ✅ Completed | Trip Dashboard `Add Expense` action now opens the Add Expense screen skeleton |
+| Verify Add Expense screen skeleton | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 25 tests |
 
 ## Today's Remaining Checklist
 
@@ -222,7 +225,9 @@ Today Progress
 - [x] Implement SCR-006 Expense domain foundation
 - [x] Commit SCR-006 Expense domain foundation
 - [x] Push SCR-006 Expense domain foundation to GitHub
-- [ ] Start SCR-006 Add Expense screen skeleton
+- [x] Start SCR-006 Add Expense screen skeleton
+- [ ] Commit SCR-006 Add Expense screen skeleton
+- [ ] Push SCR-006 Add Expense screen skeleton to GitHub
 
 ---
 
@@ -333,7 +338,11 @@ None
 
 # 💡 Next Action
 
-Start SCR-006 Add Expense screen skeleton.
+Commit SCR-006 Add Expense screen skeleton.
+
+After that,
+
+Wire Add Expense save flow to ExpenseRepository.
 
 ---
 
@@ -361,7 +370,7 @@ Do not mark a screen as implemented until Flutter code exists and has been check
 | Sprint 0.5 | Project Foundation | 92% | 🟡 In Progress |
 | Sprint 1 | App Entry | 100% | ✅ Completed |
 | Sprint 2 | Trip Management | 30% | 🟡 In Progress |
-| Sprint 3 | Expense Tracking | 15% | 🟡 In Progress |
+| Sprint 3 | Expense Tracking | 25% | 🟡 In Progress |
 | Sprint 4 | Journal & Summary | 0% | ⏳ Planned |
 
 ### Sprint 1 Tasks
@@ -379,11 +388,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 SCR-006 Add Expense screen skeleton
+🟡 SCR-006 Add Expense screen skeleton checkpoint
 
 Next
 
-➡ Start SCR-006 Add Expense screen skeleton
+➡ Commit SCR-006 Add Expense screen skeleton
 
 
 ---
