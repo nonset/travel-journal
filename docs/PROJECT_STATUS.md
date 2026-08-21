@@ -181,6 +181,8 @@ Today Progress
 | Tighten Add Expense validation | ✅ Completed | Amount, currency, and expense date range are validated before saving |
 | Verify Expense persistence and display | ✅ Completed | `flutter analyze` passed and `flutter test` passed with 29 tests |
 | UI/UX Review Sprint reminder | ✅ Completed | Drift Expense storage and Dashboard expense display are complete; pause heavy feature work for UI/UX review next |
+| Commit Expense persistence and Dashboard display | ✅ Completed | Commit `8840a3b Persist and display expenses` |
+| Push Expense persistence and Dashboard display | ✅ Completed | Pushed Expense persistence/display checkpoint to `origin/main` |
 
 ## Today's Remaining Checklist
 
@@ -245,8 +247,8 @@ Today Progress
 - [x] Implement Drift Expense storage
 - [x] Show saved expenses on Trip Dashboard
 - [x] Tighten Add Expense validation
-- [ ] Commit Expense persistence and Dashboard display
-- [ ] Push Expense persistence and Dashboard display to GitHub
+- [x] Commit Expense persistence and Dashboard display
+- [x] Push Expense persistence and Dashboard display to GitHub
 - [ ] Start UI/UX Review Sprint
 
 ---
@@ -358,10 +360,6 @@ None
 
 # 💡 Next Action
 
-Commit Expense persistence and Dashboard display.
-
-After that,
-
 Start UI/UX Review Sprint.
 
 ---
@@ -408,11 +406,11 @@ Sprint 0.5 : Project Foundation
 
 Current Task
 
-🟡 Expense persistence and Dashboard display checkpoint
+🟡 UI/UX Review Sprint
 
 Next
 
-➡ Commit Expense persistence and Dashboard display
+➡ Start UI/UX Review Sprint
 
 
 ---
